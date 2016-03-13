@@ -29,4 +29,7 @@
         <item>Halo 4</item>
         <item>StarCraft II</item>
     </string-array>
+    <string name="title_activity_contactenos">Contactenos</string>
+    <string name="title_activity_descripcion_mascota">DescripcionMascota</string>
+    <string name="title_activity_registro_mascota">RegistroMascota</string>
 </resources>
