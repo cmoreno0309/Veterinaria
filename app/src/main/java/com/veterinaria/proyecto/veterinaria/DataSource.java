@@ -17,7 +17,7 @@ public class DataSource {
     static List<Mascota> MASCOTAS=new ArrayList<Mascota>();
     static List<Noticia> NOTICIAS=new ArrayList<Noticia>();
 
-    
+
 
 
     static{
