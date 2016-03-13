@@ -46,7 +46,8 @@
             android:id="@+id/mapa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableTop="@drawable/mapa48" />
+            android:drawableTop="@drawable/mapa48"
+            android:onClick="btn_Contactenos"/>
 
     </LinearLayout>
 

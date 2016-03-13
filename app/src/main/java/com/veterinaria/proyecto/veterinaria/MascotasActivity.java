@@ -1,6 +1,7 @@
 package com.veterinaria.proyecto.veterinaria;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -53,6 +54,9 @@ public class MascotasActivity extends Activity implements AdapterView.OnItemClic
         Mascota mascota = (Mascota)adaptador.getItem(position);
         String msg = "Elegiste la tarea:\n"+mascota.getNombre()+"-"+mascota.getEdad();
         Toast.makeText(this,msg,Toast.LENGTH_LONG).show();
+
+        Intent intent = new Intent(this,DescripcionMascota.class);
+        startActivity(intent);
 
     }
 }

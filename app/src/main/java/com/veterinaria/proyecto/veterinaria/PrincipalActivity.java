@@ -35,9 +35,9 @@ public class PrincipalActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        /*if (id == R.id.action_settings) {
             return true;
-        }
+        }*/
 
         switch (id){
             case R.id.mn_casa:
@@ -58,6 +58,11 @@ public class PrincipalActivity extends AppCompatActivity {
 
     public void btn_Historia(View view) {
         Intent intent = new Intent(this,HistoriaActivity.class);
+        startActivity(intent);
+    }
+
+    public void btn_Contactenos(View view) {
+        Intent intent = new Intent(this,Contactenos.class);
         startActivity(intent);
     }
 }
