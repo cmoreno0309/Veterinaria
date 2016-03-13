@@ -2,7 +2,6 @@ package com.veterinaria.proyecto.veterinaria;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -20,7 +19,7 @@ public class MascotasActivity extends Activity implements AdapterView.OnItemClic
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mascotas);
+        setContentView(R.layout.ac_mascotas);
 
         //Instancia del ListView
         lista = (ListView)findViewById(R.id.lst_mascotas);

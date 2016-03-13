@@ -4,4 +4,29 @@
     <string name="tituloVeterinaria">Veterinaria Mar Cola</string>
     <string name="textoVeterinaria">La clínica veterinaria Mar de colas nacio el dia 15 de diciembre del 2011, de una combinación del gran amor por los animales y el profesionalismo de nuestros médicos veterinario y viendo la necesidad de tener un centro de salud integral en el que todo momento estemos velando por el bienestar de los animales con médicos veterinarios altamente capacitados</string>
     <string name="agregar">Agregar</string>
+    <string name="txt_nombre_mascota">Nombre</string>
+    <string name="txt_sexo_mascota">Sexo</string>
+    <string name="txt_peso_mascota">Peso</string>
+    <string name="txt_raza_mascota">Raza</string>
+    <string name="txt_edad_mascota">Edad</string>
+    <string name="txt_cumpleanos_mascota">Cumpleaños</string>
+    <string name="txt_esterilizado_mascota">Esterilizado</string>
+    <string name="txt_alimentacion_mascota">Alimentación</string>
+    <string name="txt_tratamiento_mascota">Tratamiento</string>
+    <string name="rbt_hembra_mascota">Hembra</string>
+    <string name="rbt_macho_mascota">Macho</string>
+    <string name="rbt_si">Si</string>
+    <string name="rbt_no">No</string>
+    <string name="btn_registrar">Registrar</string>
+    <string name="btn_limpiar">Limpiar</string>
+    <string name="btn_recordatorio">Recordatorio</string>
+    <string name="btn_reserva">Reservar Cita</string>
+    <string name="btn_dueno">Mi dueño</string>
+    <string-array name="Games">
+        <item>League of Legends</item>
+        <item>Diablo III</item>
+        <item>God of War</item>
+        <item>Halo 4</item>
+        <item>StarCraft II</item>
+    </string-array>
 </resources>
