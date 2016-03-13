@@ -1,5 +1,6 @@
 package com.veterinaria.proyecto.veterinaria;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -18,14 +19,7 @@ public class PrincipalActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
     }
 
     @Override
@@ -47,6 +41,25 @@ public class PrincipalActivity extends AppCompatActivity {
             return true;
         }
 
+        switch (id){
+            case R.id.mn_casa:
+                               break;
+            case R.id.mn_mascota: Intent intent = new Intent(this,MascotasActivity.class);
+                                  startActivity(intent);
+                                  break;
+            case R.id.mn_noticia:Intent noticia = new Intent(this,NoticiaActivity.class);
+                                 startActivity(noticia);
+                                 break;
+            case R.id.mn_servicio:
+                break;
+
+        }
+
         return super.onOptionsItemSelected(item);
+    }
+
+    public void btn_Historia(View view) {
+        Intent intent = new Intent(this,HistoriaActivity.class);
+        startActivity(intent);
     }
 }

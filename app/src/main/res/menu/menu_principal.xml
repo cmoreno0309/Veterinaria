@@ -7,4 +7,30 @@
         android:orderInCategory="100"
         android:title="@string/action_settings"
         app:showAsAction="never" />
+
+    <item
+        android:id="@+id/mn_casa"
+        app:showAsAction="always"
+        android:icon="@drawable/casa48"
+        android:title="Principal"/>
+
+    <item
+        android:id="@+id/mn_mascota"
+        app:showAsAction="always"
+        android:icon="@drawable/mascota48"
+        android:title="Mascota"/>
+
+    <item
+        android:id="@+id/mn_noticia"
+        app:showAsAction="always"
+        android:icon="@drawable/noticia48"
+        android:title="Noticia"/>
+
+    <item
+        android:id="@+id/mn_servicio"
+        app:showAsAction="always"
+        android:icon="@drawable/patita48"
+        android:title="Servicios"/>
+
+
 </menu>

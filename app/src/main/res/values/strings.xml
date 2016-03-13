@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Veterinaria</string>
     <string name="action_settings">Settings</string>
+    <string name="tituloVeterinaria">Veterinaria Mar Cola</string>
+    <string name="textoVeterinaria">La clínica veterinaria Mar de colas nacio el dia 15 de diciembre del 2011, de una combinación del gran amor por los animales y el profesionalismo de nuestros médicos veterinario y viendo la necesidad de tener un centro de salud integral en el que todo momento estemos velando por el bienestar de los animales con médicos veterinarios altamente capacitados</string>
+    <string name="agregar">Agregar</string>
 </resources>
