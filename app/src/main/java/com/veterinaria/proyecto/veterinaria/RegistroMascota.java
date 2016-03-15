@@ -12,7 +12,7 @@ public class RegistroMascota extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.ac_registro_mascota);
+        setContentView(R.layout.content_registro_mascota);
         /*Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 

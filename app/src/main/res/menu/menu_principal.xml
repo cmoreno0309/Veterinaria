@@ -32,5 +32,10 @@
         android:icon="@drawable/patita48"
         android:title="Servicios"/>
 
+    <item
+        android:id="@+id/mn_dueno"
+        app:showAsAction="always"
+        android:icon="@drawable/patita48"
+        android:title="Dueño"/>
 
 </menu>

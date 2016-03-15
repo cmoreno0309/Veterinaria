@@ -18,9 +18,9 @@ public class NoticiaActivity extends Activity implements AdapterView.OnItemClick
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.ac_noticia);
+        setContentView(R.layout.content_noticia);
         //Instancia del ListView
-        lista = (ListView)findViewById(R.id.lst_noticias);
+        /*lista = (ListView)findViewById(R.id.lst_noticias);
 
         //Inicializar el adaptador con la fuente de datos
         adaptador = new NoticiasArrayAdapter(this, DataSource.NOTICIAS);
@@ -29,7 +29,7 @@ public class NoticiaActivity extends Activity implements AdapterView.OnItemClick
         lista.setAdapter(adaptador);
 
         //Estableciendo la escucha
-        lista.setOnItemClickListener(this);
+        lista.setOnItemClickListener(this);*/
     }
 
     @Override

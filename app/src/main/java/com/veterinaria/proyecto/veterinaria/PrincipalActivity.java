@@ -13,7 +13,7 @@ public class PrincipalActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.ac_principal);
+        setContentView(R.layout.content_principal);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -48,6 +48,9 @@ public class PrincipalActivity extends AppCompatActivity {
             case R.id.mn_noticia:Intent noticia = new Intent(this,NoticiaActivity.class);
                                  startActivity(noticia);
                                  break;
+            /*case R.id.mn_dueno:Intent noticia = new Intent(this,NoticiaActivity.class);
+                                startActivity(noticia);
+                                break;*/
             case R.id.mn_servicio:
                 break;
 

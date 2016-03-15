@@ -20,7 +20,7 @@ public class MascotasActivity extends Activity implements AdapterView.OnItemClic
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.ac_mascotas);
+        setContentView(R.layout.content_mascotas);
 
         //Instancia del ListView
         lista = (ListView)findViewById(R.id.lst_mascotas);
@@ -57,6 +57,10 @@ public class MascotasActivity extends Activity implements AdapterView.OnItemClic
 
         Intent intent = new Intent(this,DescripcionMascota.class);
         startActivity(intent);
+    }
 
+    public void mRegistrarMascota(View view){
+        Intent intent = new Intent(this,RegistroMascota.class);
+        startActivity(intent);
     }
 }

@@ -31,6 +31,10 @@
         <activity
             android:name=".RegistroMascota"
             android:label="@string/title_activity_registro_mascota"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".RegistroCita"
+            android:label="@string/title_activity_registro_cita"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
