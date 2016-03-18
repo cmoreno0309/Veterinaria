@@ -18,6 +18,7 @@ import domain.Noticia;
  */
 public class NoticiasArrayAdapter<T> extends ArrayAdapter<Noticia> {
 
+
     public NoticiasArrayAdapter(Context context, List<Noticia> objects) {
         super(context, 0, objects);
     }
