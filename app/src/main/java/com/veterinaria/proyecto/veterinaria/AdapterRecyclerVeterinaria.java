@@ -22,6 +22,7 @@ public class AdapterRecyclerVeterinaria extends RecyclerView.Adapter<AdapterRecy
     Object lst_Objetos;
     String tipoObjeto;
 
+
     public AdapterRecyclerVeterinaria(Context context,Object lst_Objetos,String tipoObjeto){
         this.context = context;
         this.lst_Objetos = lst_Objetos;
