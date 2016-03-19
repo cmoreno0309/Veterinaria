@@ -1,4 +1,4 @@
-package com.example.rosa.veterinaria_s;
+package com.veterinaria.proyecto.veterinaria;
 
 import android.app.Activity;
 import android.os.Bundle;

@@ -1,4 +1,4 @@
-package com.example.rosa.veterinaria_s;
+package com.veterinaria.proyecto.veterinaria;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentTabHost;
@@ -6,9 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.example.rosa.veterinaria_s.recordatorios.Bano;
-import com.example.rosa.veterinaria_s.recordatorios.Examen;
-import com.example.rosa.veterinaria_s.recordatorios.Peluqueria;
+import com.veterinaria.proyecto.veterinaria.recordatorios.Bano;
+import com.veterinaria.proyecto.veterinaria.recordatorios.Examen;
+import com.veterinaria.proyecto.veterinaria.recordatorios.Peluqueria;
 
 public class RecordatorioActivity extends AppCompatActivity {
 
@@ -33,7 +33,7 @@ public class RecordatorioActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_principal, menu);
         return true;
     }
 

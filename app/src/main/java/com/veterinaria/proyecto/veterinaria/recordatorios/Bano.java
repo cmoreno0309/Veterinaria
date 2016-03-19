@@ -1,4 +1,4 @@
-package com.example.rosa.veterinaria_s.recordatorios;
+package com.veterinaria.proyecto.veterinaria.recordatorios;
 
 /**
  * Created by Rosa on 15/03/2016.
@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.rosa.veterinaria_s.R;
+import com.veterinaria.proyecto.veterinaria.R;
 
 public class Bano extends Fragment {
 
