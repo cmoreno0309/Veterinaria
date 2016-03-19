@@ -29,8 +29,11 @@ public class Mascota {
         this.tratamiento = tratamiento;
     }
 
-    public int getCodigo_mascota() {
-        return codigo_mascota;
+    public Mascota(int codigo_mascota, String nombre, String edad, int imagen) {
+        this.codigo_mascota = codigo_mascota;
+        this.nombre         = nombre;
+        this.edad           = edad;
+        this.imagen         = imagen;
     }
 
     public void setCodigo_mascota(int codigo_mascota) {

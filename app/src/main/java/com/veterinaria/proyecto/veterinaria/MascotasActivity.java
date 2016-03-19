@@ -3,6 +3,9 @@ package com.veterinaria.proyecto.veterinaria;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -10,29 +13,27 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import domain.Mascota;
 
-public class MascotasActivity extends Activity implements AdapterView.OnItemClickListener  {
+public class MascotasActivity extends AppCompatActivity {
 
-    ListView lista;
-    ArrayAdapter adaptador;
+    RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_mascotas);
 
-        //Instancia del ListView
-        lista = (ListView)findViewById(R.id.lst_mascotas);
 
-        //Inicializar el adaptador con la fuente de datos
-        adaptador = new MascotasArrayAdapter(this, DataSource.MASCOTAS);
+        recyclerView = (RecyclerView) findViewById(R.id.lst_objetos);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        //Relacionando la lista con el adaptador
-        lista.setAdapter(adaptador);
+        RecyclerView.Adapter adapter= new AdapterRecyclerVeterinaria(this,DataSource.MASCOTAS,"m");
+        recyclerView.setAdapter(adapter);
 
-        //Estableciendo la escucha
-        lista.setOnItemClickListener(this);
     }
 
 
@@ -48,7 +49,7 @@ public class MascotasActivity extends Activity implements AdapterView.OnItemClic
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
+   /* @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
         Mascota mascota = (Mascota)adaptador.getItem(position);
@@ -57,7 +58,7 @@ public class MascotasActivity extends Activity implements AdapterView.OnItemClic
 
         Intent intent = new Intent(this,DescripcionMascota.class);
         startActivity(intent);
-    }
+    }*/
 
     public void mRegistrarMascota(View view){
         Intent intent = new Intent(this,RegistroMascota.class);

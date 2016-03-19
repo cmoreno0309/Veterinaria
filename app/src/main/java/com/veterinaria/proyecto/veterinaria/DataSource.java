@@ -22,9 +22,9 @@ public class DataSource {
 
     static{
 
-        MASCOTAS.add(new Mascota("Chocolate","3 meses",R.drawable.chiguaga));
-        MASCOTAS.add(new Mascota("Negro","5 meses", R.drawable.perrito));
-        MASCOTAS.add(new Mascota("Pinky","1 año",R.drawable.perrito1));
+        MASCOTAS.add(new Mascota(1,"Chocolate","3 meses",R.drawable.chiguaga));
+        MASCOTAS.add(new Mascota(2,"Negro","5 meses", R.drawable.perrito));
+        MASCOTAS.add(new Mascota(3,"Pinky","1 año",R.drawable.perrito1));
 
         NOTICIAS.add(new Noticia("Cuidados con perritos pequeños","Perrito chiguaga ...................",R.drawable.chiguaga));
         NOTICIAS.add(new Noticia("Cuidados con perritos pequeños","Perrito chiguaga ...................",R.drawable.perrito));
