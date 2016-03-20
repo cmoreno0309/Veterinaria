@@ -9,9 +9,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-/**
- * Created by Rosa on 17/03/2016.
- */
 public class LogueoActivity extends Activity{
 
     protected void onCreate(Bundle savedInstanceStatte) {
@@ -30,7 +27,7 @@ public class LogueoActivity extends Activity{
                     startActivity(new Intent(getApplicationContext(),MascotasActivity.class));
                 }else{
                     Log.d("No Entro","yee");
-                    Toast.makeText(getApplicationContext(),"Usuario incorrecto",Toast.LENGTH_SHORT);
+                    Toast.makeText(getApplicationContext(),"Usuario incorrecto",Toast.LENGTH_SHORT).show();
                 }
 
         }

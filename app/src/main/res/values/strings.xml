@@ -51,5 +51,6 @@
     
     <string name="btn_editar">Editar</string>
     <string name="btn_guardar">Guardar</string>
+    <string name="registrar_cuenta"><u>Registrar Cuenta</u></string>
 
 </resources>
