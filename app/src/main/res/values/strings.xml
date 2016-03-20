@@ -51,5 +51,13 @@
     
     <string name="btn_editar">Editar</string>
     <string name="btn_guardar">Guardar</string>
+    <string name="lbl_historia">Historia Veterinaria</string>
+    <string name="lbl_mascota">Mascota</string>
+    <string name="Noticias">Noticias</string>
+    <string name="lbl_logueo">Logueo</string>
+    <string name="lbl_duenio">Mis Datos</string>
+    <string name="lbl_servicios">Servicios</string>
+    <string name="lbl_cuenta">Cuenta</string>
+    <string name="lbl_recordatorio">Recordatorio</string>
 
 </resources>

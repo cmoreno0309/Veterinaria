@@ -17,41 +17,42 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".HistoriaActivity" />
-        <activity android:name=".MascotasActivity" />
-        <activity android:name=".NoticiaActivity" />
         <activity
-            android:name=".Contactenos"
+            android:label="@string/lbl_historia"
+            android:name=".HistoriaActivity" />
+        <activity
+            android:label="@string/lbl_mascota"
+            android:name=".MascotasActivity" />
+        <activity
+            android:label="@string/Noticias"
+            android:name=".NoticiaActivity" />
+        <activity
             android:label="@string/title_activity_contactenos"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:name=".Contactenos" />
         <activity
-            android:name=".DescripcionMascota"
             android:label="@string/title_activity_descripcion_mascota"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:name=".DescripcionMascota"/>
         <activity
-            android:name=".RegistroMascota"
             android:label="@string/title_activity_registro_mascota"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:name=".RegistroMascota" />
         <activity
-            android:name=".RegistroCita"
             android:label="@string/title_activity_registro_cita"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:name=".RegistroCita"/>
         <activity
-            android:name=".LogueoActivity"
-            android:label="@string/title_activity_registro_cita"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:label="@string/lbl_logueo"
+            android:name=".LogueoActivity"/>
         <activity
-            android:name=".DuenoActivity"
-            android:label="@string/title_activity_registro_cita"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:label="@string/lbl_duenio"
+            android:name=".DuenoActivity"/>
         <activity
-            android:name=".ServicioActivity"
-            android:label="@string/title_activity_registro_cita"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:label="@string/lbl_servicios"
+            android:name=".ServicioActivity"/>
         <activity
-            android:name=".RegistroCuenta"
-            android:label="@string/title_activity_registro_cita"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:label="@string/lbl_cuenta"
+            android:name=".RegistroCuenta"/>
+        <activity
+            android:label="@string/lbl_recordatorio"
+            android:name=".RecordatorioActivity"/>
 
     </application>
 
