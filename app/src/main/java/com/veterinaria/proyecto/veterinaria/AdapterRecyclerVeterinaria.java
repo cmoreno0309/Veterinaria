@@ -123,7 +123,7 @@ public class AdapterRecyclerVeterinaria extends RecyclerView.Adapter<AdapterRecy
 
         }
     }
-    
+
 
     @Override
     public int getItemCount() {
