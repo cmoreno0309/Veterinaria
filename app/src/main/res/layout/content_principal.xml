@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:fitsSystemWindows="true"
     tools:context="com.veterinaria.proyecto.veterinaria.PrincipalActivity"
     tools:showIn="@layout/content_principal">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        >
     <LinearLayout
         android:id="@+id/linea3"
         android:layout_width="wrap_content"
@@ -50,11 +51,11 @@
             android:onClick="btn_Contactenos"/>
 
     </LinearLayout>
-
+    </RelativeLayout>
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay"
+        android:layout_gravity="bottom"
         android:layout_alignParentBottom="true">
 
         <android.support.v7.widget.Toolbar
@@ -67,4 +68,4 @@
     </android.support.design.widget.AppBarLayout>
 
 
-</RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>
