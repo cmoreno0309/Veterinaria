@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+            <TextView
+                android:layout_height="match_parent"
+                android:text="Nombre:"
+                style="@style/TextRegistroMascota"/>
+            <TextView android:layout_height="match_parent"
+                style="@style/EditRegistroMascota"
+                android:text="Maria"/>
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+            <TextView
+                android:layout_height="match_parent"
+                android:text="Direccion:"
+                style="@style/TextRegistroMascota"/>
+            <TextView android:layout_height="match_parent"
+                style="@style/EditRegistroMascota"
+                android:text="Jr. Enrique Palacios 166"/>
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+            <TextView
+                android:layout_height="match_parent"
+                android:text="Correo:"
+                style="@style/TextRegistroMascota"/>
+            <TextView android:layout_height="match_parent"
+                style="@style/EditRegistroMascota"
+                android:text="abc@gmail.com"/>
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+            <TextView
+                android:layout_height="match_parent"
+                android:text="Telefono:"
+                style="@style/TextRegistroMascota"/>
+            <TextView android:layout_height="match_parent"
+                style="@style/EditRegistroMascota"
+                android:text="7531592"/>
+        </TableRow>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true">
+            <Button
+                android:id="@+id/btn_editar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/btn_editar"/>
+
+        </LinearLayout>
+    </TableLayout>
+
+</RelativeLayout>
