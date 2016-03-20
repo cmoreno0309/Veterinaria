@@ -31,37 +31,9 @@ public class MascotasActivity extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.lst_objetos);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        RecyclerView.Adapter adapter= new AdapterRecyclerVeterinaria(this,DataSource.MASCOTAS,"m");
+        RecyclerView.Adapter adapter= new AdapterRecyclerVeterinaria(this,DataSource.MASCOTAS,0);
         recyclerView.setAdapter(adapter);
 
     }
 
-
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-      /*  if (id == R.id.action_clear) {
-            //Limpiar todos los elementos
-            adaptador.clear();
-            return true;
-        }*/
-        return super.onOptionsItemSelected(item);
-    }
-
-   /* @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-        Mascota mascota = (Mascota)adaptador.getItem(position);
-        String msg = "Elegiste la tarea:\n"+mascota.getNombre()+"-"+mascota.getEdad();
-        Toast.makeText(this,msg,Toast.LENGTH_LONG).show();
-
-        Intent intent = new Intent(this,DescripcionMascota.class);
-        startActivity(intent);
-    }*/
-
-    public void mRegistrarMascota(View view){
-        Intent intent = new Intent(this,RegistroMascota.class);
-        startActivity(intent);
-    }
 }

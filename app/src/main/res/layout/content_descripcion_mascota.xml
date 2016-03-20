@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/imgfoto"
         android:text="Leo"
-        android:textSize="25dp"
+        android:textSize="20dp"
         style="@style/TextRegistroMascota"
         android:id="@+id/txtnombre"/>
 
@@ -55,6 +55,22 @@
             <TextView
                 android:layout_height="match_parent"
                 android:text="01/05"
+                android:id="@+id/txtcumpleanos"
+                style="@style/TextRegistroMascota"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+            <TextView
+                android:layout_height="match_parent"
+                android:text="@string/txt_color_mascota"
+                style="@style/TextRegistroMascota"/>
+            <TextView
+                android:layout_height="match_parent"
+                android:text="Blanco"
+                android:id="@+id/txtcolor"
                 style="@style/TextRegistroMascota"/>
         </TableRow>
 
@@ -69,6 +85,7 @@
             <TextView
                 android:layout_height="match_parent"
                 android:text="Macho"
+                android:id="@+id/txtsexo"
                 style="@style/TextRegistroMascota"/>
         </TableRow>
 
@@ -83,6 +100,7 @@
             <TextView
                 android:layout_height="match_parent"
                 android:text="Cocker"
+                android:id="@+id/txtraza"
                 style="@style/TextRegistroMascota"/>
 
         </TableRow>
@@ -98,6 +116,7 @@
             <TextView
                 android:layout_height="match_parent"
                 android:text="20kilos"
+                android:id="@+id/txtpeso"
                 style="@style/TextRegistroMascota"/>
         </TableRow>
 
@@ -112,6 +131,7 @@
             <TextView
                 android:layout_height="match_parent"
                 android:text="Ricocan"
+                android:id="@+id/txtalimentacion"
                 style="@style/TextRegistroMascota"/>
         </TableRow>
 
@@ -127,26 +147,33 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="Un comprimido al dia"
+                android:id="@+id/txttratamiento"
                 android:padding="5dp"/>
         </TableRow>
 
-        <TableRow
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp">
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="@string/btn_recordatorio"/>
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="@string/btn_reserva"
-                android:onClick="mReservarCita"/>
-        </TableRow>
-
     </TableLayout>
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/btn_recordatorio"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/btn_reserva"
+            android:onClick="mReservarCita"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/btn_editar_mascota"
+            android:onClick="mEditarMascota"/>
+    </LinearLayout>
 </RelativeLayout>

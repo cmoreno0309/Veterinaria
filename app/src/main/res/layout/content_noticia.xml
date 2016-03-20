@@ -9,11 +9,11 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.veterinaria.proyecto.veterinaria.NoticiaActivity">
 
-    <ListView
-        android:id="@+id/lst_noticias"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1" />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/lst_objetos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </android.support.v7.widget.RecyclerView>
 
 
 
