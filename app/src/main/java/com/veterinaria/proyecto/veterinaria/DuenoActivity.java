@@ -22,13 +22,13 @@ public class DuenoActivity extends AppCompatActivity {
                 setContentView(R.layout.content_dueno_editable);
             }
         });
-        Button btn_guardar = (Button) findViewById(R.id.btn_guardar);
+       /* Button btn_guardar = (Button) findViewById(R.id.btn_guardar);
         btn_guardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setContentView(R.layout.content_dueno);
+               // setContentView(R.layout.content_dueno);
             }
-        });
+        });*/
     }
 
     @Override

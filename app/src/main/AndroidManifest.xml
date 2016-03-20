@@ -36,6 +36,23 @@
             android:name=".RegistroCita"
             android:label="@string/title_activity_registro_cita"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".LogueoActivity"
+            android:label="@string/title_activity_registro_cita"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".DuenoActivity"
+            android:label="@string/title_activity_registro_cita"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".ServicioActivity"
+            android:label="@string/title_activity_registro_cita"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".RegistroCuenta"
+            android:label="@string/title_activity_registro_cita"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+
     </application>
 
 </manifest>

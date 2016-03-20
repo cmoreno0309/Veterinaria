@@ -127,4 +127,8 @@ public class DescripcionMascota extends AppCompatActivity {
 
 
     }
+
+    public void btn_Recordatorio(View view) {
+        startActivity(new Intent(this,RecordatorioActivity.class));
+    }
 }

@@ -1,8 +1,9 @@
 package com.veterinaria.proyecto.veterinaria;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,23 +23,23 @@ public class LogueoActivity extends Activity{
             public void onClick(View v) {
                 String usuario = ((EditText) findViewById(R.id.txt_usuario)).getText().toString();
                 String password = ((EditText) findViewById(R.id.txt_password)).getText().toString();
-                if (usuario.equals("fulanofeliz") && password.equals("123")){
-                    setContentView(R.layout.act_recordatorios);
+
+                Log.d("Usuario:",usuario+" "+password);
+                if (usuario.equals("Maria") && password.equals("123")){
+                    Log.d("Entro","yee");
+                    startActivity(new Intent(getApplicationContext(),MascotasActivity.class));
                 }else{
+                    Log.d("No Entro","yee");
                     Toast.makeText(getApplicationContext(),"Usuario incorrecto",Toast.LENGTH_SHORT);
                 }
 
         }
-
         });
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_principal, menu);
-        return true;
+
+    public void btn_cuenta(View view) {
+        startActivity(new Intent(this,RegistroCuenta.class));
+
     }
-
-
 }

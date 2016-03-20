@@ -56,5 +56,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Aceptar"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"/>
+
+    <Button
+        android:id="@+id/btn_cuenta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registrar Cuenta"
+        android:layout_gravity="center"
+        android:onClick="btn_cuenta"/>
+
 </LinearLayout>

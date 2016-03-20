@@ -42,17 +42,14 @@ public class PrincipalActivity extends AppCompatActivity {
         switch (id){
             case R.id.mn_casa:
                                break;
-            case R.id.mn_mascota: Intent intent = new Intent(this,MascotasActivity.class);
-                                  startActivity(intent);
+            case R.id.mn_mascota: startActivity(new Intent(this,LogueoActivity.class));
                                   break;
-            case R.id.mn_noticia:Intent noticia = new Intent(this,NoticiaActivity.class);
-                                 startActivity(noticia);
+            case R.id.mn_noticia:startActivity(new Intent(this,NoticiaActivity.class));
                                  break;
-            /*case R.id.mn_dueno:Intent noticia = new Intent(this,NoticiaActivity.class);
-                                startActivity(noticia);
-                                break;*/
-            case R.id.mn_servicio:
-                break;
+            case R.id.mn_dueno: startActivity(new Intent(this,DuenoActivity.class));
+                                break;
+            case R.id.mn_servicio: startActivity(new Intent(this,ServicioActivity.class));
+                                   break;
 
         }
 
