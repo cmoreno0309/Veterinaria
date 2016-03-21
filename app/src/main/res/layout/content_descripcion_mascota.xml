@@ -152,29 +152,5 @@
         </TableRow>
 
     </TableLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true">
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="@string/btn_recordatorio"
-            android:onClick="btn_Recordatorio"/>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="@string/btn_reserva"
-            android:onClick="mReservarCita"/>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="@string/btn_editar_mascota"
-            android:onClick="mEditarMascota"/>
-    </LinearLayout>
+    
 </RelativeLayout>

@@ -5,7 +5,6 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
@@ -24,7 +23,7 @@
             android:label="@string/lbl_mascota"
             android:name=".MascotasActivity" />
         <activity
-            android:label="@string/Noticias"
+            android:label="@string/lbl_noticia"
             android:name=".NoticiaActivity" />
         <activity
             android:label="@string/title_activity_contactenos"

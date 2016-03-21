@@ -6,6 +6,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
@@ -30,6 +31,7 @@ public class RegistroMascota extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_registro_mascota);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         edtnombre = (EditText) findViewById(R.id.edtnombre);
         //edtanios = (EditText) findViewById(R.id.edtanios);
@@ -95,5 +97,16 @@ public class RegistroMascota extends AppCompatActivity {
         edtpeso.setText("");
         edtalimentacion.setText("");
         edtesterilizado.setText("");
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        switch (id) {
+            case android.R.id.home:
+                finish();
+                break;
+
+        }
+        return true;
     }
 }

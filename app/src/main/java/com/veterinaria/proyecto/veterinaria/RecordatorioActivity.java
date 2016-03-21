@@ -5,6 +5,7 @@ import android.support.v4.app.FragmentTabHost;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TabHost;
 
 import com.veterinaria.proyecto.veterinaria.recordatorios.Bano;
 import com.veterinaria.proyecto.veterinaria.recordatorios.Examen;
@@ -20,14 +21,11 @@ public class RecordatorioActivity extends AppCompatActivity {
         setContentView(R.layout.act_recordatorios);
 
         tabHost= (FragmentTabHost) findViewById(android.R.id.tabhost);
-        tabHost.setup(this,
-                getSupportFragmentManager(),android.R.id.tabcontent);
-        tabHost.addTab(tabHost.newTabSpec("tab1").setIndicator("Lengüeta 1"),
-                Bano.class, null);
-        tabHost.addTab(tabHost.newTabSpec("tab2").setIndicator("Lengüeta 2"),
-                Peluqueria.class, null);
-        tabHost.addTab(tabHost.newTabSpec("tab3").setIndicator("Lengüeta 3"),
-                Examen.class, null);
+        tabHost.setup(this, getSupportFragmentManager(), android.R.id.tabcontent);
+
+        tabHost.addTab(tabHost.newTabSpec("tab1").setContent(R.id.tab1).setIndicator("Lengüeta 1"),Bano.class, null);
+        tabHost.addTab(tabHost.newTabSpec("tab2").setContent(R.id.tab2).setIndicator("Lengüeta 2"),Peluqueria.class, null);
+        tabHost.addTab(tabHost.newTabSpec("tab3").setIndicator("Lengüeta 3"), Examen.class, null);
     }
 
     @Override

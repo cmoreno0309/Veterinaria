@@ -36,9 +36,9 @@
         <item>Pueblo Libre</item>
     </string-array>
     <string name="title_activity_contactenos">Contactenos</string>
-    <string name="title_activity_descripcion_mascota">DescripcionMascota</string>
-    <string name="title_activity_registro_mascota">RegistroMascota</string>
-    <string name="title_activity_registro_cita">RegistroCita</string>
+    <string name="title_activity_descripcion_mascota">Detalle Mascota</string>
+    <string name="title_activity_registro_mascota">Registro Mascota</string>
+    <string name="title_activity_registro_cita">Registro Cita</string>
     
     <string name="lifecycle_method_list">Lifecycle Method List</string>
     <string name="activity_status">Activity Status</string>
@@ -52,5 +52,18 @@
     <string name="btn_editar">Editar</string>
     <string name="btn_guardar">Guardar</string>
     <string name="registrar_cuenta">Registrar Cuenta</string>
+    <string name="lbl_historia">Historia</string>
+    <string name="lbl_mascota">Mascota</string>
+    <string name="lbl_noticia">Noticias</string>
+    <string name="lbl_logueo">Logueo</string>
+    <string name="lbl_duenio">Mis Datos</string>
+    <string name="lbl_servicios">Servicios</string>
+    <string name="lbl_cuenta">Cuenta</string>
+    <string name="lbl_recordatorio">Recordatorio</string>
+    <string name="btn_ingresar">Ingresar</string>
+    <string name="lbl_registrarse">Registrate</string>
+    <string name="opc_recordatorio">Recordatorio</string>
+    <string name="opc_reserva">Reservar Cita</string>
+    <string name="opc_editar">Editar</string>
 
 </resources>

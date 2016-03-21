@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.veterinaria.proyecto.veterinaria.DescripcionMascota">
+    <item
+        android:id="@+id/mn_recordatorio"
+        android:title="@string/opc_recordatorio"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/mn_reservar"
+        android:title="@string/opc_reserva"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/mn_editar"
+        android:title="@string/opc_editar"
+        android:icon="@android:drawable/ic_menu_edit"
+        app:showAsAction="always" />
+
+
+
+</menu>

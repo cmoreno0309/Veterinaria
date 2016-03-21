@@ -7,6 +7,8 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -36,6 +38,7 @@ public class DescripcionMascota extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_descripcion_mascota);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         txtnombre = (TextView) findViewById(R.id.txtnombre);
         txtanios = (TextView) findViewById(R.id.txtanios);
@@ -76,32 +79,8 @@ public class DescripcionMascota extends AppCompatActivity {
         txttratamiento.setText(tratamiento);
     }
 
-    public void mReservarCita(View view){
-        Intent intent = new Intent(this,RegistroCita.class);
-        startActivity(intent);
-    }
-
     public void mEditarMascota(View view){
-        //Define el bundle
-        Bundle parametros = new Bundle();
-        parametros.putInt("ID_MASCOTA", idmascota);
-        parametros.putString("NOMBRE", txtnombre.getText() + "");
-        parametros.putString("EDAD", txtanios.getText() + "");
-        parametros.putString("CUMPLEANOS", txtcumpleanos.getText() + "");
-        parametros.putString("SEXO",txtsexo.getText() + "");
-        parametros.putString("RAZA",  txtraza.getText() + "");
-        parametros.putString("PESO", txtpeso.getText() + "");
-        parametros.putString("ALIMENTACION",  txtalimentacion.getText() + "");
-        parametros.putString("TRATAMIENTO",  txttratamiento.getText() + "");
-        parametros.putString("COLOR", txtcolor.getText() + "");
-        parametros.putString("ESTERILIZADO", esterilizado);
-        parametros.putBoolean("ENCONTRADO", true);
 
-        Intent intent = new Intent(this,RegistroMascota.class);
-        intent.putExtras(parametros);
-
-        //Inicia la actividad
-        startActivityForResult(intent,1234);
     }
 
     @Override
@@ -128,7 +107,48 @@ public class DescripcionMascota extends AppCompatActivity {
 
     }
 
-    public void btn_Recordatorio(View view) {
-        startActivity(new Intent(this,RecordatorioActivity.class));
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_detalle_mascota, menu);
+        return true;
     }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        switch (id) {
+            case android.R.id.home   : finish();
+                                       break;
+            case R.id.mn_recordatorio: startActivity(new Intent(this, RecordatorioActivity.class));
+                                       break;
+            case R.id.mn_reservar    : startActivity(new Intent(this, RegistroCita.class));
+                                       break;
+            case R.id.mn_editar      :  //Define el bundle
+                                        Bundle parametros = new Bundle();
+                                        parametros.putInt("ID_MASCOTA", idmascota);
+                                        parametros.putString("NOMBRE", txtnombre.getText() + "");
+                                        parametros.putString("EDAD", txtanios.getText() + "");
+                                        parametros.putString("CUMPLEANOS", txtcumpleanos.getText() + "");
+                                        parametros.putString("SEXO",txtsexo.getText() + "");
+                                        parametros.putString("RAZA",  txtraza.getText() + "");
+                                        parametros.putString("PESO", txtpeso.getText() + "");
+                                        parametros.putString("ALIMENTACION",  txtalimentacion.getText() + "");
+                                        parametros.putString("TRATAMIENTO",  txttratamiento.getText() + "");
+                                        parametros.putString("COLOR", txtcolor.getText() + "");
+                                        parametros.putString("ESTERILIZADO", esterilizado);
+                                        parametros.putBoolean("ENCONTRADO", true);
+
+                                        Intent intent = new Intent(this,RegistroMascota.class);
+                intent.putExtras(parametros);
+
+                                        //Inicia la actividad
+                                        startActivityForResult(intent,1234);
+                                        break;
+
+        }
+
+        return true;
+    }
+
+
+
 }
