@@ -16,6 +16,7 @@ import java.util.List;
 
 import domain.Mascota;
 import domain.Noticia;
+import domain.Recordatorio;
 
 /**
  * Created by Cmoreno on 18/03/2016.
@@ -27,6 +28,7 @@ public class AdapterRecyclerVeterinaria extends RecyclerView.Adapter<AdapterRecy
     int     tipoObjeto;
     List<Mascota> lista_mascotas;
     List<Noticia> lista_noticia;
+    List<Recordatorio> lista_recordatorio;
 
 
     public AdapterRecyclerVeterinaria(Context context,Object lst_Objetos,int tipoObjeto){
@@ -38,6 +40,8 @@ public class AdapterRecyclerVeterinaria extends RecyclerView.Adapter<AdapterRecy
                      break;
             case 1:  this.lista_noticia  = (List<Noticia>)lst_Objetos;
                      break;
+            case 2:  this.lista_recordatorio = (List<Recordatorio>) lst_Objetos;
+                    break;
 
         }
 
@@ -66,7 +70,9 @@ public class AdapterRecyclerVeterinaria extends RecyclerView.Adapter<AdapterRecy
                     viewHolder.txt_principal.setText(noticia.getTitulo());
                     viewHolder.txt_secundario.setText(noticia.getDescripcion());
 
-
+            case 2: Recordatorio recordatorio = lista_recordatorio.get(position);
+                    viewHolder.txt_principal.setText(recordatorio.getTitulo());
+                    viewHolder.txt_secundario.setText(recordatorio.getDescripcion());
         }
 
 
@@ -119,6 +125,7 @@ public class AdapterRecyclerVeterinaria extends RecyclerView.Adapter<AdapterRecy
                 case 1: context.startActivity(new Intent(context,NoticiaActivity.class));
                         break;
 
+
             }
 
         }
@@ -132,6 +139,8 @@ public class AdapterRecyclerVeterinaria extends RecyclerView.Adapter<AdapterRecy
             case 0:  return null == lista_mascotas ? 0 : lista_mascotas.size();
 
             case 1:  return null==lista_noticia? 0: lista_noticia.size();
+
+            case 2: return  null==lista_recordatorio? 0 : lista_recordatorio.size();
 
             default: return 0;
 
