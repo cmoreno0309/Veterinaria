@@ -8,7 +8,7 @@
     android:fitsSystemWindows="true"
     tools:openDrawer="start">
 
-    <include layout="@layout/act_recordatorios" />
+    <include layout="@layout/content_frame_recordatorio" />
 
     <include
         layout="@layout/app_bar_navegacion_recordatorio"

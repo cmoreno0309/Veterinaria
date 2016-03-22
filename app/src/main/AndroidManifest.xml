@@ -10,11 +10,7 @@
         <activity
             android:name=".PrincipalActivity"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:label="@string/lbl_historia"
@@ -52,6 +48,16 @@
         <activity
             android:label="@string/lbl_recordatorio"
             android:name=".RecordatorioActivity"/>
+        <activity
+            android:label="@string/lbl_recordatorio"
+            android:name=".NavegacionRecordatorioActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
     </application>
 
