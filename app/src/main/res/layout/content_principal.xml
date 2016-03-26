@@ -1,71 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_principal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:context="com.veterinaria.proyecto.veterinaria.PrincipalActivity"
-    tools:showIn="@layout/content_principal">
+    tools:context="com.veterinaria.proyecto.veterinaria.FragmentPrincipal">
+
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        >
-    <LinearLayout
-        android:id="@+id/linea3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        >
+        android:gravity="center">
 
-        <ImageView
-            android:id="@+id/portada"
+        <LinearLayout
+            android:id="@+id/linea3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:src="@drawable/portada" />
+            android:layout_centerHorizontal="true">
 
-    </LinearLayout>
+            <ImageView
+                android:id="@+id/portada"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/portada" />
 
-    <LinearLayout
-        android:id="@+id/linea2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/linea3"
-        android:layout_centerInParent="true">
-        <Button
-            android:id="@+id/clinica"
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linea2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableTop="@drawable/clinica48"
-            android:onClick="btn_Historia"/>
+            android:layout_below="@+id/linea3"
+            android:layout_centerInParent="true">
 
-        <Button
-            android:id="@+id/mapa"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:drawableTop="@drawable/mapa48"
-            android:onClick="btn_Contactenos"/>
+            <Button
+                android:id="@+id/clinica"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/clinica48"
+                android:onClick="btn_Historia" />
 
-    </LinearLayout>
-    </RelativeLayout>
-    <android.support.design.widget.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:layout_alignParentBottom="true">
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/linea4"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay"/>
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linea2"
+            android:layout_alignParentBottom="true">
 
-    </android.support.design.widget.AppBarLayout>
+            <Button
+                android:id="@+id/btn_miservicios"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:text="Mis Servicios"
+                android:drawableTop="@drawable/clinica48"
+                android:onClick="btn_verservicios" />
+            <Button
+                android:id="@+id/btn_mismascotas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:text="Mis Mascotas"
+                android:drawableTop="@drawable/mascota48"
+                android:onClick="btn_vermascotas" />
+
+            <Button
+                android:id="@+id/btn_miscitas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:text="Mis Citas"
+                android:drawableTop="@drawable/patita48"
+                android:onClick="btn_vercitas" />
+
+        </LinearLayout>
+    </RelativeLayout>
 
 
-</android.support.design.widget.CoordinatorLayout>
+</FrameLayout>

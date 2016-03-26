@@ -27,14 +27,19 @@
         android:ellipsize="marquee"
         android:singleLine="true"
         android:text="Description"
-        android:textSize="12sp" />
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/txt_secundario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Example application"
-        android:textSize="16sp" />
+        android:textSize="12sp" />
+
+        <Button android:id="@+id/btn_vermas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reservar Cita"/>
 
      </LinearLayout>
 </RelativeLayout>

@@ -2,6 +2,7 @@ package com.veterinaria.proyecto.veterinaria;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -15,38 +16,34 @@ public class FragmentMedicacion extends Fragment {
 
     RecyclerView recyclerView;
 
-    RecyclerView.LayoutManager   mLayoutManager;
-    protected String[] mDataset;
-
     public FragmentMedicacion() {
         // Required empty public constructor
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        initDataset();
+        super.onCreate(savedInstanceState);
 
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.content_rec_medicacion, container, false);
 
         //Lista de Recordatorios
-        recyclerView = (RecyclerView) container.findViewById(R.id.lst_objetos);
-        mLayoutManager = new LinearLayoutManager(getActivity());
-        recyclerView.setLayoutManager(mLayoutManager);
+        recyclerView = (RecyclerView) rootView.findViewById(R.id.lst_objetos);
 
-        RecyclerView.Adapter adapter= new AdapterRecyclerVeterinaria(getContext(),DataSource.RECORDATORIO,0);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+
+        RecyclerView.Adapter adapter= new AdapterRecyclerVeterinaria(getActivity(),DataSource.RECORDATORIO,2);
         recyclerView.setAdapter(adapter);
 
-        return inflater.inflate(R.layout.content_rec_medicacion, container, false);
+        return rootView;
     }
 
-    private void initDataset() {
-        mDataset = new String[60];
-        for (int i = 0; i < 60; i++) {
-            mDataset[i] = "This is element #" + i;
-        }
-    }
+
+
+
+
 }

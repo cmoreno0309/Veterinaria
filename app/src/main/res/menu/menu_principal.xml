@@ -2,29 +2,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.veterinaria.proyecto.veterinaria.PrincipalActivity">
-    <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="@string/action_settings"
-        app:showAsAction="never" />
 
-    <item
-        android:id="@+id/mn_casa"
-        app:showAsAction="always"
-        android:icon="@drawable/casa48"
-        android:title="Principal"/>
 
     <item
         android:id="@+id/mn_mascota"
         app:showAsAction="always"
         android:icon="@drawable/mascota48"
-        android:title="Mascota"/>
-
-    <item
-        android:id="@+id/mn_noticia"
-        app:showAsAction="always"
-        android:icon="@drawable/noticia48"
-        android:title="Noticia"/>
+        android:title="Mis Mascotas"/>
 
     <item
         android:id="@+id/mn_servicio"
@@ -33,9 +17,9 @@
         android:title="Servicios"/>
 
     <item
-        android:id="@+id/mn_dueno"
+        android:id="@+id/mn_cita"
         app:showAsAction="always"
         android:icon="@drawable/patita48"
-        android:title="Dueño"/>
+        android:title="Mis Citas"/>
 
 </menu>

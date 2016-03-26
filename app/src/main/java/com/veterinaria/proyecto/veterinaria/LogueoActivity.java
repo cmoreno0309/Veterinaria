@@ -19,6 +19,7 @@ public class LogueoActivity extends AppCompatActivity {
         setContentView(R.layout.act_logueo);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Button btn_logueo = (Button) findViewById(R.id.btn_logueo);
+        TextView link_registrar = (TextView) findViewById(R.id.link_registrar);
 
         btn_logueo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -26,17 +27,26 @@ public class LogueoActivity extends AppCompatActivity {
                 String usuario = ((EditText) findViewById(R.id.txt_usuario)).getText().toString();
                 String password = ((EditText) findViewById(R.id.txt_password)).getText().toString();
 
-                Log.d("Usuario:",usuario+" "+password);
-                if (usuario.equals("Maria") && password.equals("123")){
-                    Log.d("Entro","yee");
-                    startActivity(new Intent(getApplicationContext(),MascotasActivity.class));
-                }else{
-                    Log.d("No Entro","yee");
-                    Toast.makeText(getApplicationContext(),"Usuario incorrecto",Toast.LENGTH_SHORT).show();
+                Log.d("Usuario:", usuario + " " + password);
+                if (usuario.equals("Maria") && password.equals("123")) {
+                    Log.d("Entro", "yee");
+                    startActivity(new Intent(getApplicationContext(), MascotasActivity.class));
+                } else {
+                    Log.d("No Entro", "yee");
+                    Toast.makeText(getApplicationContext(), "Usuario incorrecto", Toast.LENGTH_SHORT).show();
                 }
 
-        }
+            }
         });
+
+        link_registrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), MascotasActivity.class));
+            }
+        });
+
+
     }
 
 

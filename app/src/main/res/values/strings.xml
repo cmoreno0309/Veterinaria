@@ -74,5 +74,13 @@
     <string name="opc_banio">Baño</string>
     <string name="opc_vacuna">Vacunas</string>
     <string name="opc_cita">Citas</string>
+    <string name="opc_menu_principal">Menu</string>
+    <string name="opc_mis_servicios">Mis Servicios</string>
+    <string name="opc_mis_mascotas">Mis Mascotas</string>
+    <string name="opc_mis_citas">Mis Citas</string>
+    <string name="opc_perfil">Perfil</string>
+    <string name="opc_promocion">Promociones</string>
+    <string name="opc_contacto">Contacto</string>
+    <string name="opc_inicio">Inicio</string>
 
 </resources>

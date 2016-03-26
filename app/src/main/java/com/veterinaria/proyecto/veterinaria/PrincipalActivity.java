@@ -31,14 +31,8 @@ public class PrincipalActivity extends AppCompatActivity {
 
         int id = item.getItemId();
         switch (id){
-            case R.id.mn_casa:
-                               break;
             case R.id.mn_mascota: startActivity(new Intent(this,LogueoActivity.class));
                                   break;
-            case R.id.mn_noticia:startActivity(new Intent(this,NoticiaActivity.class));
-                                 break;
-            case R.id.mn_dueno: startActivity(new Intent(this,DuenoActivity.class));
-                                break;
             case R.id.mn_servicio: startActivity(new Intent(this,ServicioActivity.class));
                                    break;
 
@@ -56,4 +50,9 @@ public class PrincipalActivity extends AppCompatActivity {
         Intent intent = new Intent(this,Contactenos.class);
         startActivity(intent);
     }
+
+
+
+
+
 }

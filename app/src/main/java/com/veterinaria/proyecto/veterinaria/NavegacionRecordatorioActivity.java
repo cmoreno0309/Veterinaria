@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -78,28 +79,33 @@ public class NavegacionRecordatorioActivity extends AppCompatActivity
         boolean fragmentTransaction = false;
         Fragment fragment = null;
 
-        if (id == R.id.nav_medicacion) {
-            fragment = new FragmentMedicacion();
+        if (id == R.id.nav_principal) {
+            fragment = new FragmentPrincipal();
+            fragmentTransaction = true;
+        } else if (id == R.id.nav_servicios) {
+            fragment = new FragmentServicio();
             fragmentTransaction = true;
 
-        } else if (id == R.id.nav_peluqueria) {
-            fragment = new FragmentPeluqueria();
+        }  else if (id == R.id.nav_mascotas) {
+            fragment = new FragmentMascota();
             fragmentTransaction = true;
-
-        } else if (id == R.id.nav_bano) {
-            fragment = new FragmentBano();
+        } else if (id == R.id.nav_perfil) {
+            fragment = new FragmentLogueo();
             fragmentTransaction = true;
-
-        } else if (id == R.id.nav_vacuna) {
-
-        } else if (id == R.id.nav_cita) {
-
+        } else if (id == R.id.nav_promocion) {
+            fragment = new FragmentPromocion();
+            fragmentTransaction = true;
+        }else if (id == R.id.nav_contacto) {
+            fragment = new FragmentContacto();
+            fragmentTransaction = true;
+        }else if (id == R.id.nav_cita) {
+            fragment = new FragmentCita();
+            fragmentTransaction = true;
         }
 
+
         if(fragmentTransaction) {
-            getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.content_frame, fragment)
-                    .commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, fragment).commit();
 
             item.setChecked(true);
             getSupportActionBar().setTitle(item.getTitle());
@@ -108,5 +114,9 @@ public class NavegacionRecordatorioActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void setActionBarTitle(String title) {
+        getSupportActionBar().setTitle(title);
     }
 }

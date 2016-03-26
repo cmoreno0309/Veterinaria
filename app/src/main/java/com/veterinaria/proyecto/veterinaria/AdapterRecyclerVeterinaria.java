@@ -5,18 +5,22 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.RecyclerView;
+import android.transition.ChangeImageTransform;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
 
+import domain.Cita;
 import domain.Mascota;
 import domain.Noticia;
 import domain.Recordatorio;
+import domain.Servicio;
 
 /**
  * Created by Cmoreno on 18/03/2016.
@@ -29,6 +33,8 @@ public class AdapterRecyclerVeterinaria extends RecyclerView.Adapter<AdapterRecy
     List<Mascota> lista_mascotas;
     List<Noticia> lista_noticia;
     List<Recordatorio> lista_recordatorio;
+    List<Servicio> lista_servicio;
+    List<Cita> lista_cita;
 
 
     public AdapterRecyclerVeterinaria(Context context,Object lst_Objetos,int tipoObjeto){
@@ -41,7 +47,11 @@ public class AdapterRecyclerVeterinaria extends RecyclerView.Adapter<AdapterRecy
             case 1:  this.lista_noticia  = (List<Noticia>)lst_Objetos;
                      break;
             case 2:  this.lista_recordatorio = (List<Recordatorio>) lst_Objetos;
-                    break;
+                     break;
+            case 3:  this.lista_servicio = (List<Servicio>) lst_Objetos;
+                     break;
+            case 4:  this.lista_cita     = (List<Cita>) lst_Objetos;
+                     break;
 
         }
 
@@ -69,10 +79,23 @@ public class AdapterRecyclerVeterinaria extends RecyclerView.Adapter<AdapterRecy
                     viewHolder.imagen.setImageResource(noticia.getImagen());
                     viewHolder.txt_principal.setText(noticia.getTitulo());
                     viewHolder.txt_secundario.setText(noticia.getDescripcion());
+                    break;
+
 
             case 2: Recordatorio recordatorio = lista_recordatorio.get(position);
                     viewHolder.txt_principal.setText(recordatorio.getTitulo());
                     viewHolder.txt_secundario.setText(recordatorio.getDescripcion());
+                    break;
+
+            case 3: Servicio servicio = lista_servicio.get(position);
+                    viewHolder.txt_principal.setText(servicio.getNombreServicio());
+                    viewHolder.txt_secundario.setText(servicio.getDescripcionServicio());
+                    break;
+
+            case 4: Cita cita = lista_cita.get(position);
+                    viewHolder.txt_principal.setText(cita.getEmpleado().getNombreEmpleado());
+                    viewHolder.txt_secundario.setText(cita.getServicio().getNombreServicio());
+                    break;
         }
 
 
@@ -85,16 +108,21 @@ public class AdapterRecyclerVeterinaria extends RecyclerView.Adapter<AdapterRecy
         private ImageView imagen;
         private TextView  txt_principal;
         private TextView  txt_secundario;
+        private Button    btn_vermas;
 
         public CustomViewHolder(View view) {
             super(view);
-            this.imagen         = (ImageView) view.findViewById(R.id.imagen);
+            this.imagen         = (ImageView)view.findViewById(R.id.imagen);
             this.txt_principal  = (TextView) view.findViewById(R.id.txt_principal);
             this.txt_secundario = (TextView) view.findViewById(R.id.txt_secundario);
+            this.btn_vermas     = (Button)   view.findViewById(R.id.btn_vermas);
 
             imagen.setOnClickListener(this);
 
+
         }
+
+
 
         @Override
         public void onClick(View v) {
@@ -141,6 +169,10 @@ public class AdapterRecyclerVeterinaria extends RecyclerView.Adapter<AdapterRecy
             case 1:  return null==lista_noticia? 0: lista_noticia.size();
 
             case 2: return  null==lista_recordatorio? 0 : lista_recordatorio.size();
+
+            case 3: return  null==lista_servicio? 0 : lista_servicio.size();
+
+            case 4: return  null==lista_cita? 0 : lista_cita.size();
 
             default: return 0;
 

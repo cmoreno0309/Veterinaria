@@ -1,49 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_contacto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin">
-    <Spinner
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:entries="@array/Games"></Spinner>
+    tools:context="com.veterinaria.proyecto.veterinaria.FragmentContacto">
 
-
-
-    <TextView
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/txt_celular"
-        android:text="Asistencia 24 horas"/>
-
-    <TextView
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:layout_above="@+id/txt_celular"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/txt_contacto"
-        android:text="Telefono consulta"/>
-
-    <TextView
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:layout_above="@+id/txt_contacto"
-        android:layout_alignParentLeft="true"
-        android:id="@+id/lbl_contacto"
-        android:text="Contacto"/>
-
-    <ImageView
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/lbl_contacto"
-        android:src="@drawable/ic_launcher"
-        android:layout_centerHorizontal="true"
-        />
-</RelativeLayout>
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:entries="@array/Games"></Spinner>
+
+
+        <TextView
+            android:id="@+id/txt_celular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:text="Asistencia 24 horas" />
+
+        <TextView
+            android:id="@+id/txt_contacto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/txt_celular"
+            android:layout_centerHorizontal="true"
+            android:text="Telefono consulta" />
+
+        <TextView
+            android:id="@+id/lbl_contacto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/txt_contacto"
+            android:layout_alignParentLeft="true"
+            android:text="Contacto" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/lbl_contacto"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_launcher" />
+    </RelativeLayout>
+</FrameLayout>

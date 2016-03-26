@@ -3,20 +3,26 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_medicacion"
-            android:title="@string/opc_medicacion" />
+            android:id="@+id/nav_principal"
+            android:title="@string/opc_inicio" />
         <item
-            android:id="@+id/nav_peluqueria"
-            android:title="@string/opc_peluqueria" />
+            android:id="@+id/nav_servicios"
+            android:title="@string/opc_mis_servicios" />
         <item
-            android:id="@+id/nav_bano"
-            android:title="@string/opc_banio" />
-        <item
-            android:id="@+id/nav_vacuna"
-            android:title="@string/opc_vacuna" />
+            android:id="@+id/nav_mascotas"
+            android:title="@string/opc_mis_mascotas" />
         <item
             android:id="@+id/nav_cita"
-            android:title="@string/opc_cita" />
+            android:title="@string/opc_mis_citas" />
+        <item
+            android:id="@+id/nav_perfil"
+            android:title="@string/opc_perfil" />
+        <item
+            android:id="@+id/nav_promocion"
+            android:title="@string/opc_promocion" />
+        <item
+            android:id="@+id/nav_contacto"
+            android:title="@string/opc_contacto" />
     </group>
 
 </menu>
