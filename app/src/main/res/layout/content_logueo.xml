@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_logueo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.veterinaria.proyecto.veterinaria.FragmentLogueo">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/lny_usuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/activity_horizontal_margin">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="Usuario"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txt_usuario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:hint="Ingresar usuario" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lny_clave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lny_usuario"
+            android:paddingLeft="@dimen/activity_horizontal_margin">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="Password"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txt_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:ems="10"
+                android:fontFamily="sans-serif"
+                android:hint="Ingresar password"
+                android:inputType="textPassword" />
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/btn_logueo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lny_clave"
+            android:layout_centerInParent="true"
+            android:text="@string/btn_ingresar"
+            android:onClick="btn_logueo"/>
+
+        <TextView
+            android:id="@+id/link_registrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btn_logueo"
+            android:layout_centerInParent="true"
+            android:linksClickable="true"
+            android:text="@string/lbl_registrarse" />
+    </RelativeLayout>
+</FrameLayout>
