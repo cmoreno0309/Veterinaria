@@ -12,6 +12,11 @@
         android:layout_centerHorizontal="true"
         android:entries="@array/Sede"></Spinner>
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/lst_objetos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+
 
 
 </RelativeLayout>

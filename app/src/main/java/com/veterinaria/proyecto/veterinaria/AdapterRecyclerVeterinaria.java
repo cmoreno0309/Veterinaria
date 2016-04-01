@@ -116,6 +116,20 @@ public class AdapterRecyclerVeterinaria extends RecyclerView.Adapter<AdapterRecy
             this.txt_principal  = (TextView) view.findViewById(R.id.txt_principal);
             this.txt_secundario = (TextView) view.findViewById(R.id.txt_secundario);
             this.btn_vermas     = (Button)   view.findViewById(R.id.btn_vermas);
+            switch (tipoObjeto) {
+                case 0: this.btn_vermas.setText("Reservar Cita");
+                        break;
+                case 1: this.btn_vermas.setText("Ver mas");
+                        break;
+                case 2: this.btn_vermas.setText("Ver mas");
+                        break;
+                case 3: this.btn_vermas.setText("Ver mas");
+                        break;
+                case 4: this.btn_vermas.setText("Ver mas");
+                        break;
+
+            }
+
 
             imagen.setOnClickListener(this);
 

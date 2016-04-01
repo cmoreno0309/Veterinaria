@@ -7,6 +7,7 @@ public class Empleado {
 
     private String codigoEmpleado;
     private String nombreEmpleado;
+    private HorarioAtencion horarioAtencion;
 
     public Empleado(String codigoEmpleado,String nombreEmpleado){
         this.setCodigoEmpleado(codigoEmpleado);
@@ -28,5 +29,14 @@ public class Empleado {
 
     public void setNombreEmpleado(String nombreEmpleado) {
         this.nombreEmpleado = nombreEmpleado;
+    }
+
+
+    public HorarioAtencion getHorarioAtencion() {
+        return horarioAtencion;
+    }
+
+    public void setHorarioAtencion(HorarioAtencion horarioAtencion) {
+        this.horarioAtencion = horarioAtencion;
     }
 }
