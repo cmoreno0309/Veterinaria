@@ -119,6 +119,8 @@ public class AdapterRecyclerVeterinaria extends RecyclerView.Adapter<AdapterRecy
 
             imagen.setOnClickListener(this);
 
+            btn_vermas.setOnClickListener(this);
+
 
         }
 
@@ -127,34 +129,49 @@ public class AdapterRecyclerVeterinaria extends RecyclerView.Adapter<AdapterRecy
         @Override
         public void onClick(View v) {
 
-            switch (tipoObjeto) {
+            if(v.getId()==this.imagen.getId()){
+                switch (tipoObjeto) {
 
-                case 0:     int position = getLayoutPosition();
-                            Mascota mascota = lista_mascotas.get(position);
-                            Bundle parametros = new Bundle();
-                            parametros.putInt("ID_MASCOTA", mascota.getCodigo_mascota());
-                            parametros.putString("NOMBRE", mascota.getNombre());
-                            parametros.putString("EDAD", mascota.getEdad());
-                            parametros.putString("CUMPLEANOS", mascota.getCumpleanos());
-                            parametros.putString("SEXO", mascota.getSexo());
-                            parametros.putString("RAZA", mascota.getRaza());
-                            parametros.putString("PESO", mascota.getPeso());
-                            parametros.putString("ALIMENTACION", mascota.getAlimentacion());
-                            parametros.putString("TRATAMIENTO", mascota.getTratamiento());
-                            parametros.putString("COLOR", mascota.getColor());
-                            parametros.putInt("IMAGEN", mascota.getImagen());
-                            Intent intent = new Intent(context,DescripcionMascota.class);
-                            intent.putExtras(parametros);
-                            //intent.putExtra("",) parceable algun día ...
+                    case 0:     int position = getLayoutPosition();
+                        Mascota mascota = lista_mascotas.get(position);
+                        Bundle parametros = new Bundle();
+                        parametros.putInt("ID_MASCOTA", mascota.getCodigo_mascota());
+                        parametros.putString("NOMBRE", mascota.getNombre());
+                        parametros.putString("EDAD", mascota.getEdad());
+                        parametros.putString("CUMPLEANOS", mascota.getCumpleanos());
+                        parametros.putString("SEXO", mascota.getSexo());
+                        parametros.putString("RAZA", mascota.getRaza());
+                        parametros.putString("PESO", mascota.getPeso());
+                        parametros.putString("ALIMENTACION", mascota.getAlimentacion());
+                        parametros.putString("TRATAMIENTO", mascota.getTratamiento());
+                        parametros.putString("COLOR", mascota.getColor());
+                        parametros.putInt("IMAGEN", mascota.getImagen());
+                        Intent intent = new Intent(context,DescripcionMascota.class);
+                        intent.putExtras(parametros);
+                        //intent.putExtra("",) parceable algun día ...
 
-                            context.startActivity(intent);
+                        context.startActivity(intent);
                         break;
 
-                case 1: context.startActivity(new Intent(context,NoticiaActivity.class));
+                    case 1: context.startActivity(new Intent(context,NoticiaActivity.class));
                         break;
+
+
+                }
+
+            }else if(v.getId()==this.btn_vermas.getId()){
+                switch (tipoObjeto) {
+
+                    case 0: context.startActivity(new Intent(context,RegistroCita.class));
+                            break;
+
+
+                }
 
 
             }
+
+
 
         }
     }
