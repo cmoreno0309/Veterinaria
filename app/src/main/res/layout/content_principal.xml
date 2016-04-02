@@ -47,32 +47,40 @@
         <LinearLayout
             android:id="@+id/linea4"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="65dp"
+            android:layout_marginTop="5dp"
             android:layout_below="@+id/linea2"
-            android:layout_alignParentBottom="true">
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/btn_miservicios"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_gravity="bottom"
                 android:text="Mis Servicios"
+                android:layout_weight="1"
+                android:layout_margin="0.5dp"
                 android:drawableTop="@drawable/clinica48"
                 android:onClick="btn_verservicios" />
             <Button
                 android:id="@+id/btn_mismascotas"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_gravity="bottom"
                 android:text="Mis Mascotas"
+                android:layout_weight="1"
+                android:layout_margin="1dp"
                 android:drawableTop="@drawable/mascota48"
                 android:onClick="btn_vermascotas" />
 
             <Button
                 android:id="@+id/btn_miscitas"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:layout_margin="1dp"
                 android:text="Mis Citas"
                 android:drawableTop="@drawable/patita48"
                 android:onClick="btn_vercitas" />

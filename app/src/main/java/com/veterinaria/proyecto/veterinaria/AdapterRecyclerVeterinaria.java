@@ -17,6 +17,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import domain.Cita;
+import domain.HorarioAtencion;
 import domain.Mascota;
 import domain.Noticia;
 import domain.Recordatorio;
@@ -35,6 +36,7 @@ public class AdapterRecyclerVeterinaria extends RecyclerView.Adapter<AdapterRecy
     List<Recordatorio> lista_recordatorio;
     List<Servicio> lista_servicio;
     List<Cita> lista_cita;
+    List<HorarioAtencion> lista_horario;
 
 
     public AdapterRecyclerVeterinaria(Context context,Object lst_Objetos,int tipoObjeto){
@@ -51,6 +53,8 @@ public class AdapterRecyclerVeterinaria extends RecyclerView.Adapter<AdapterRecy
             case 3:  this.lista_servicio = (List<Servicio>) lst_Objetos;
                      break;
             case 4:  this.lista_cita     = (List<Cita>) lst_Objetos;
+                     break;
+            case 5:  this.lista_horario  = (List<HorarioAtencion>) lst_Objetos;
                      break;
 
         }
@@ -96,6 +100,11 @@ public class AdapterRecyclerVeterinaria extends RecyclerView.Adapter<AdapterRecy
                     viewHolder.txt_principal.setText(cita.getEmpleado().getNombreEmpleado());
                     viewHolder.txt_secundario.setText(cita.getServicio().getNombreServicio());
                     break;
+
+            case 5: HorarioAtencion horario = lista_horario.get(position);
+                    viewHolder.txt_principal.setText(horario.getEmpleado().getNombreEmpleado());
+                    viewHolder.txt_secundario.setText(horario.getFechaDisponible().toString()+" "+horario.getEmpleado().getServicio().getNombreServicio());
+                    break;
         }
 
 
@@ -126,6 +135,8 @@ public class AdapterRecyclerVeterinaria extends RecyclerView.Adapter<AdapterRecy
                 case 3: this.btn_vermas.setText("Ver mas");
                         break;
                 case 4: this.btn_vermas.setText("Ver mas");
+                        break;
+                case 5: this.btn_vermas.setText("Reservar");
                         break;
 
             }
@@ -195,15 +206,17 @@ public class AdapterRecyclerVeterinaria extends RecyclerView.Adapter<AdapterRecy
     public int getItemCount() {
 
         switch (tipoObjeto) {
-            case 0:  return null == lista_mascotas ? 0 : lista_mascotas.size();
+            case 0: return null == lista_mascotas ? 0 : lista_mascotas.size();
 
-            case 1:  return null==lista_noticia? 0: lista_noticia.size();
+            case 1: return null == lista_noticia? 0: lista_noticia.size();
 
-            case 2: return  null==lista_recordatorio? 0 : lista_recordatorio.size();
+            case 2: return null == lista_recordatorio? 0 : lista_recordatorio.size();
 
-            case 3: return  null==lista_servicio? 0 : lista_servicio.size();
+            case 3: return null == lista_servicio? 0 : lista_servicio.size();
 
-            case 4: return  null==lista_cita? 0 : lista_cita.size();
+            case 4: return null == lista_cita? 0 : lista_cita.size();
+
+            case 5: return null == lista_horario? 0 : lista_horario.size();
 
             default: return 0;
 

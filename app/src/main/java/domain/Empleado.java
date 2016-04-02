@@ -7,11 +7,12 @@ public class Empleado {
 
     private String codigoEmpleado;
     private String nombreEmpleado;
-    private HorarioAtencion horarioAtencion;
+    private Servicio servicio;
 
-    public Empleado(String codigoEmpleado,String nombreEmpleado){
+    public Empleado(String codigoEmpleado,String nombreEmpleado,Servicio servicio){
         this.setCodigoEmpleado(codigoEmpleado);
         this.setNombreEmpleado(nombreEmpleado);
+        this.servicio = servicio;
     }
 
 
@@ -32,11 +33,11 @@ public class Empleado {
     }
 
 
-    public HorarioAtencion getHorarioAtencion() {
-        return horarioAtencion;
+    public Servicio getServicio() {
+        return servicio;
     }
 
-    public void setHorarioAtencion(HorarioAtencion horarioAtencion) {
-        this.horarioAtencion = horarioAtencion;
+    public void setServicio(Servicio servicio) {
+        this.servicio = servicio;
     }
 }

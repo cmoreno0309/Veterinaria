@@ -10,7 +10,14 @@ public class HorarioAtencion {
     private String codigoHorario;
     private Date fechaDisponible;
     private boolean indReservado;
+    private Empleado empleado;
 
+    public HorarioAtencion(String codigoHorario,Date fechaDisponible,boolean indReservado,Empleado empleado) {
+      this.codigoHorario   = codigoHorario;
+      this.fechaDisponible = fechaDisponible;
+      this.indReservado    = indReservado;
+      this.empleado        = empleado;
+    }
 
     public String getCodigoHorario() {
         return codigoHorario;
@@ -34,5 +41,14 @@ public class HorarioAtencion {
 
     public void setIndReservado(boolean indReservado) {
         this.indReservado = indReservado;
+    }
+
+
+    public Empleado getEmpleado() {
+        return empleado;
+    }
+
+    public void setEmpleado(Empleado empleado) {
+        this.empleado = empleado;
     }
 }
