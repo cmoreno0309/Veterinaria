@@ -36,8 +36,8 @@ public class DataSource {
         MASCOTAS.add(new Mascota(2,R.drawable.perrito,"Shadow","1 año","24/05/2015","Macho","Labrador","23 kilos","Mimaskot","Gotitas al ojo diario","no",""));
         MASCOTAS.add(new Mascota(3,R.drawable.perrito1,"Pepa","5 años","10/04/2011","Hembra","Pequines","10 kilos","Pedigree","Curación de uñas","no",""));
 
-        NOTICIAS.add(new Noticia("Cuidados con perritos pequeños","Perrito chiguaga ...................",R.drawable.chiguaga));
-        NOTICIAS.add(new Noticia("Cuidados con perritos pequeños","Perrito chiguaga ...................",R.drawable.perrito));
+        NOTICIAS.add(new Noticia("1","Cuidados con perritos pequeños","Perrito chiguaga ...................",R.drawable.chiguaga));
+        NOTICIAS.add(new Noticia("2","Cuidados con perritos pequeños","Perrito chiguaga ...................",R.drawable.perrito));
 
         RECORDATORIO.add(new Recordatorio("1","21/03/2015","Pastillas"));
         RECORDATORIO.add(new Recordatorio("2","21/03/2015","Crema"));

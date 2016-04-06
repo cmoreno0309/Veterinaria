@@ -2,16 +2,13 @@ package com.veterinaria.proyecto.veterinaria;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.MenuItem;
-import android.widget.ListView;
 
 
 public class NoticiaActivity extends AppCompatActivity {
 
-    ListView lista;
-    RecyclerView recyclerView;
+    public static final String ID_NOTICIA = "idNoticia";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,11 +16,11 @@ public class NoticiaActivity extends AppCompatActivity {
         setContentView(R.layout.content_noticia);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        recyclerView = (RecyclerView) findViewById(R.id.lst_objetos);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        Bundle parametros = this.getIntent().getExtras();
+        String idCodigoNoticia = parametros.getString(ID_NOTICIA);
 
-        RecyclerView.Adapter adapter= new AdapterRecyclerVeterinaria(this,DataSource.NOTICIAS,1);
-        recyclerView.setAdapter(adapter);
+        Log.d("ID NOTICIA",idCodigoNoticia);
+
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
