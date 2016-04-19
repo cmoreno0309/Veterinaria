@@ -6,9 +6,15 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+
+import com.veterinaria.proyecto.veterinaria.data.MascotaDAO;
+import com.veterinaria.proyecto.veterinaria.data.MascotaSQLite;
+
+import domain.Mascota;
 
 public class RegistroMascota extends AppCompatActivity {
 
@@ -26,10 +32,12 @@ public class RegistroMascota extends AppCompatActivity {
     public static final String ENCONTRADO = "ENCONTRADO";
     private EditText edtnombre,edtcumpleanos,edtcolor,edtraza,edtpeso,edtalimentacion,edtesterilizado;
     int idmascota;
+    MascotaDAO mascotaDAO;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mascotaDAO= new MascotaSQLite(this);
         setContentView(R.layout.content_registro_mascota);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -76,6 +84,15 @@ public class RegistroMascota extends AppCompatActivity {
     }
 
     public void mGuardarMascota(View view){
+        Mascota mascota = new Mascota();
+        mascota.setNombre(edtnombre.getText().toString());
+        mascota.setCumpleanos(edtcumpleanos.getText().toString());
+        mascota.setRaza(edtraza.getText().toString());
+        mascota.setPeso(edtpeso.getText().toString());
+        mascota.setEdad("22");
+        mascota.setAlimentacion(edtalimentacion.getText().toString());
+        mascota.setColor(edtcolor.getText().toString());
+
         Intent intent= new Intent();
         intent.putExtra(NOMBRE,edtnombre.getText().toString());
         intent.putExtra(CUMPLEANOS,edtcumpleanos.getText().toString());
@@ -85,7 +102,9 @@ public class RegistroMascota extends AppCompatActivity {
         intent.putExtra(ALIMENTACION,edtalimentacion.getText().toString());
         intent.putExtra(COLOR,edtcolor.getText().toString());
         //intent.putExtra(ESTERILIZADO,edtesterilizado.getText().toString());
-        setResult(RESULT_OK,intent);
+        long resultado =  mascotaDAO.registrarMascota(mascota);
+        Log.d("Resultado registro ",String.valueOf(resultado));
+        setResult(RESULT_OK, intent);
         finish();
     }
 

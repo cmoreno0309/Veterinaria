@@ -2,6 +2,8 @@ package com.veterinaria.proyecto.veterinaria;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.RecyclerView;
@@ -81,7 +83,11 @@ public class AdapterRecyclerVeterinaria extends RecyclerView.Adapter<AdapterRecy
         switch (tipoObjeto) {
             case 0:
                 Mascota mascota = lista_mascotas.get(position);
-                viewHolder.imagen.setImageResource(mascota.getImagen());
+                byte[] img= mascota.getImagen();
+                if(img !=null){
+                    Bitmap bitmap= BitmapFactory.decodeByteArray(img, 0, img.length);
+                    viewHolder.imagen.setImageBitmap(bitmap);
+                }
                 viewHolder.txt_principal.setText(mascota.getNombre());
                 viewHolder.txt_secundario.setText(mascota.getEdad());
                 break;
@@ -104,6 +110,12 @@ public class AdapterRecyclerVeterinaria extends RecyclerView.Adapter<AdapterRecy
                 Servicio servicio = lista_servicio.get(position);
                 viewHolder.txt_principal.setText(servicio.getNombreServicio());
                 viewHolder.txt_secundario.setText(servicio.getDescripcionServicio());
+                byte[] imagenServicio= servicio.getImagen();
+                if(imagenServicio !=null){
+                    Bitmap bitmap= BitmapFactory.decodeByteArray(imagenServicio, 0, imagenServicio.length);
+                    viewHolder.imagen.setImageBitmap(bitmap);
+                    viewHolder.imagen.setImageBitmap(bitmap);
+                }
                 break;
 
             case 4:
@@ -178,7 +190,6 @@ public class AdapterRecyclerVeterinaria extends RecyclerView.Adapter<AdapterRecy
                         int position = getLayoutPosition();
                         Mascota mascota = lista_mascotas.get(position);
                         Bundle parametros = new Bundle();
-                        parametros.putInt("ID_MASCOTA", mascota.getCodigo_mascota());
                         parametros.putString("NOMBRE", mascota.getNombre());
                         parametros.putString("EDAD", mascota.getEdad());
                         parametros.putString("CUMPLEANOS", mascota.getCumpleanos());
@@ -188,7 +199,7 @@ public class AdapterRecyclerVeterinaria extends RecyclerView.Adapter<AdapterRecy
                         parametros.putString("ALIMENTACION", mascota.getAlimentacion());
                         parametros.putString("TRATAMIENTO", mascota.getTratamiento());
                         parametros.putString("COLOR", mascota.getColor());
-                        parametros.putInt("IMAGEN", mascota.getImagen());
+                        //parametros.putByte("IMAGEN", mascota.getImagen());
                         Intent intent = new Intent(context, DescripcionMascota.class);
                         intent.putExtras(parametros);
                         //intent.putExtra("",) parceable algun día ...
