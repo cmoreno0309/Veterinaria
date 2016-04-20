@@ -29,7 +29,7 @@
             android:name=".DescripcionMascota"/>
         <activity
             android:label="@string/title_activity_registro_mascota"
-            android:name=".RegistroMascota" />
+            android:name=".Main_Fragment_Mascota" />
         <activity
             android:label="@string/title_activity_registro_cita"
             android:name=".RegistroCita"/>
@@ -52,6 +52,11 @@
             android:label="@string/lbl_recordatorio"
             android:name=".NavegacionRecordatorioActivity"
             android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+        <activity
+            android:name=".Inicio"
+            android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

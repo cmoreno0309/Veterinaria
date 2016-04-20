@@ -13,7 +13,30 @@
     <color name="light_yellow">#FFECC0</color>
 
     <color name="dark_blue">#0099CC</color>
-    <color name="dark_green">#669900</color>
+    <color name="dark_green">#075278</color>
     <color name="dark_red">#CC0000</color>
     <color name="dark_yellow">#FF8A00</color>
+
+    <color name="summer">#44eebd82</color>
+    <color name="fall">#44d8d27e</color>
+    <color name="winter">#44a1c1da</color>
+    <color name="spring">#448da64b</color>
+
+    <color name="today">#4b82ff</color>
+    <color name="greyed_out">#1578CB</color>
+
+    <color name="primary">#1578CB</color>
+
+    <!--menubar-->
+    <color name="primary_dark">#1578CB</color>
+
+
+    <color name="primary_light">#B2EBF2</color>
+    <color name="accent">#536DFE</color>
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#727272</color>
+    <color name="icons">#FFFFFF</color>
+    <color name="divider">#EEEEEE</color>
+
+
 </resources>

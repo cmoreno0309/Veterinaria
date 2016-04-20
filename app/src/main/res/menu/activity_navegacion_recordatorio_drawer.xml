@@ -4,25 +4,41 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_principal"
+            android:icon="@drawable/ic_home"
             android:title="@string/opc_inicio" />
         <item
-            android:id="@+id/nav_servicios"
-            android:title="@string/opc_mis_servicios" />
-        <item
             android:id="@+id/nav_mascotas"
+            android:icon="@drawable/ic_home"
             android:title="@string/opc_mis_mascotas" />
         <item
             android:id="@+id/nav_cita"
+            android:icon="@drawable/ic_home"
             android:title="@string/opc_mis_citas" />
         <item
             android:id="@+id/nav_perfil"
+            android:icon="@drawable/ic_perfil"
             android:title="@string/opc_perfil" />
         <item
-            android:id="@+id/nav_promocion"
-            android:title="@string/opc_promocion" />
-        <item
-            android:id="@+id/nav_contacto"
-            android:title="@string/opc_contacto" />
+            android:id="@+id/nav_sesion"
+            android:icon="@drawable/ic_sesion"
+            android:title="@string/opc_sesion" />
     </group>
+        <item android:title="General">
+        <menu>
+            <item
+                android:id="@+id/nav_promocion"
+                android:icon="@drawable/ic_promocion"
+                android:title="@string/opc_promocion" />
+            <item
+                android:id="@+id/nav_servicios"
+                android:icon="@drawable/ic_home"
+                android:title="@string/opc_mis_servicios" />
+            <item
+                android:id="@+id/nav_contacto"
+                android:icon="@drawable/ic_mail"
+                android:title="@string/opc_contacto" />
+        </menu>
+
+        </item>
 
 </menu>

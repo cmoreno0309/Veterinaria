@@ -24,6 +24,8 @@
     <string name="btn_reserva">Reservar Cita</string>
     <string name="btn_editar_mascota">Editar</string>
     <string name="btn_dueno">Mi dueño</string>
+    <string name="btn_tomar_foto">Tomar foto</string>
+    <string name="btn_examinar">Examinar</string>
     <string-array name="Games">
         <item>League of Legends</item>
         <item>Diablo III</item>
@@ -79,6 +81,7 @@
     <string name="opc_mis_mascotas">Mis Mascotas</string>
     <string name="opc_mis_citas">Mis Citas</string>
     <string name="opc_perfil">Perfil</string>
+    <string name="opc_sesion">Cerrar sesión</string>
     <string name="opc_promocion">Promociones</string>
     <string name="opc_contacto">Contacto</string>
     <string name="opc_inicio">Inicio</string>

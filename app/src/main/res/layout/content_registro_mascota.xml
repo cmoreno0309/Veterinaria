@@ -8,7 +8,8 @@
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal">
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/idTabla">
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -156,6 +157,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_alignParentBottom="true"
+        android:padding="30dp"
         android:layout_centerHorizontal="true">
         <Button
             android:layout_width="match_parent"

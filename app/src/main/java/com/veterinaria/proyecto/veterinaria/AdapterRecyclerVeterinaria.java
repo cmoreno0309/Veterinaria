@@ -13,10 +13,12 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
 import domain.Cita;
+import domain.Empleado;
 import domain.HorarioAtencion;
 import domain.Mascota;
 import domain.Noticia;
@@ -37,7 +39,8 @@ public class AdapterRecyclerVeterinaria extends RecyclerView.Adapter<AdapterRecy
     List<Servicio> lista_servicio;
     List<Cita> lista_cita;
     List<HorarioAtencion> lista_horario;
-
+    public static final String VETERINARIO = "VETERINARIO";
+    public static final String FECHA_CITA = "FECHA_CITA";
 
     public AdapterRecyclerVeterinaria(Context context, Object lst_Objetos, int tipoObjeto) {
         this.context = context;
@@ -150,7 +153,7 @@ public class AdapterRecyclerVeterinaria extends RecyclerView.Adapter<AdapterRecy
                     this.btn_vermas.setVisibility(View.INVISIBLE);
                     break;
                 case 4:
-                    this.btn_vermas.setText("Ver mas");
+                    //this.btn_vermas.setText("Reservar Cita");
                     this.btn_vermas.setVisibility(View.INVISIBLE);
                     break;
                 case 5:
@@ -204,22 +207,35 @@ public class AdapterRecyclerVeterinaria extends RecyclerView.Adapter<AdapterRecy
                 }
 
             } else if (v.getId() == this.btn_vermas.getId()) {
-                switch (tipoObjeto) {
 
+                //
+                Intent intent;
+                int position = getLayoutPosition();
+                Bundle parametros = new Bundle();
+                Log.d(tipoObjeto + "","tipoObjeto");
+                switch (tipoObjeto) {
                     case 0:
+                        /*HorarioAtencion horario = lista_horario.get(position);
+                        Empleado empleado = horario.getEmpleado();
+                        intent = new Intent(context, RegistroCita.class);
+                        String nombre_veterinario = empleado.getNombreEmpleado();
+                        String fecha_cita = horario.getFechaDisponible().toString();
+                        intent.putExtra(VETERINARIO, nombre_veterinario);
+                        intent.putExtra(FECHA_CITA,fecha_cita);
+                        context.startActivity(intent);*/
                         context.startActivity(new Intent(context, RegistroCita.class));
                         break;
 
                     case 1:
-                        int position = getLayoutPosition();
                         Noticia noticia = lista_noticia.get(position);
-                        Bundle parametros = new Bundle();
                         parametros.putString("idNoticia", noticia.getCodigoNoticia());
-                        Intent intent = new Intent(context, NoticiaActivity.class);
+                        intent = new Intent(context, NoticiaActivity.class);
                         intent.putExtras(parametros);
                         context.startActivity(intent);
                         break;
-
+                    case 5:
+                        Toast.makeText(context,"Se registró la cita",Toast.LENGTH_SHORT).show();
+                        break;
 
                 }
 

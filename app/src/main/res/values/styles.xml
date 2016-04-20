@@ -3,14 +3,24 @@
     <!-- Base application theme. -->
     <!--Estilo definido en el tema parent -->
     <!-- Estilo definido por nosotros .algo-->
+
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <!-- menubar detallemascota. -->
+        <item name="colorPrimary">@color/primary_dark</item>
+
+        <item name="colorPrimaryDark">@color/primary_dark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
+        <item name="android:windowBackground">@color/divider</item>
+        <item name="colorPrimary">@color/primary_dark</item>
+        <item name="colorPrimaryDark">@color/primary</item>
+        <item name="colorAccent">@color/divider</item>
+        <item name="android:textColor">@color/primary_text</item>
+        <item name="android:textColorSecondary">@color/secondary_text</item>
+        <!--<item name="icon">@color/icons</item>
+        <item name="divider">@color/divider</item>-->
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>

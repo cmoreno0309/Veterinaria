@@ -1,16 +1,20 @@
 package com.veterinaria.proyecto.veterinaria;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.EditText;
 
-public class RegistroMascota extends AppCompatActivity {
+public class RegistroMascota extends Fragment {
 
     public static final String ID_MASCOTA = "ID_MASCOTA";
     public static final String NOMBRE = "NOMBRE";
@@ -27,23 +31,25 @@ public class RegistroMascota extends AppCompatActivity {
     private EditText edtnombre,edtcumpleanos,edtcolor,edtraza,edtpeso,edtalimentacion,edtesterilizado;
     int idmascota;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.content_registro_mascota);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        edtnombre = (EditText) findViewById(R.id.edtnombre);
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.content_registro_mascota, container, false);
+
+
+        edtnombre = (EditText) rootView.findViewById(R.id.edtnombre);
         //edtanios = (EditText) findViewById(R.id.edtanios);
-        edtcumpleanos = (EditText) findViewById(R.id.edtcumpleanos);
-        edtcolor = (EditText) findViewById(R.id.edtcolor);
+        edtcumpleanos = (EditText) rootView.findViewById(R.id.edtcumpleanos);
+        edtcolor = (EditText) rootView.findViewById(R.id.edtcolor);
         //edtsexo = (EditText) findViewById(R.id.edtsexo);
-        edtraza = (EditText) findViewById(R.id.edtraza);
-        edtpeso = (EditText) findViewById(R.id.edtpeso);
-        edtalimentacion = (EditText) findViewById(R.id.edtalimentacion);
+        edtraza = (EditText) rootView.findViewById(R.id.edtraza);
+        edtpeso = (EditText) rootView.findViewById(R.id.edtpeso);
+        edtalimentacion = (EditText) rootView.findViewById(R.id.edtalimentacion);
         //edtesterilizado = (EditText) findViewById(R.id.edtesterilizado);
 
-        Bundle parametros = this.getIntent().getExtras();
+        Bundle parametros = new Bundle();
+               parametros = getActivity().getIntent().getExtras();
         Boolean encontrado = parametros.getBoolean(ENCONTRADO);
 
         if(encontrado){
@@ -73,6 +79,19 @@ public class RegistroMascota extends AppCompatActivity {
             /*edtesterilizado.setText(esterilizado);*/
         }
 
+        return rootView;
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+
+        //setContentView(R.layout.content_registro_mascota);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+
     }
 
     public void mGuardarMascota(View view){
@@ -85,8 +104,9 @@ public class RegistroMascota extends AppCompatActivity {
         intent.putExtra(ALIMENTACION,edtalimentacion.getText().toString());
         intent.putExtra(COLOR,edtcolor.getText().toString());
         //intent.putExtra(ESTERILIZADO,edtesterilizado.getText().toString());
-        setResult(RESULT_OK,intent);
-        finish();
+        //setResult(Activity.RESULT_OK,intent);
+        //getActivity().startActivityForResult(RESULT_OK,intent);
+        //finish();
     }
 
     public void mLimpiarRegistro(View view){
@@ -103,7 +123,7 @@ public class RegistroMascota extends AppCompatActivity {
         int id = item.getItemId();
         switch (id) {
             case android.R.id.home:
-                finish();
+                //finish();
                 break;
 
         }

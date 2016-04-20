@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -32,6 +33,7 @@ public class DescripcionMascota extends AppCompatActivity {
 
     private TextView txtnombre,txtanios,txtcumpleanos,txtcolor,txtsexo,txtraza,txtpeso,txtalimentacion,txttratamiento;
     private ImageView imgfoto;
+    private ImageView _btn1, _btn2, _btn3;
     int idmascota;
     String esterilizado;
     @Override
@@ -77,6 +79,8 @@ public class DescripcionMascota extends AppCompatActivity {
         txtpeso.setText(peso);
         txtalimentacion.setText(alimentacion);
         txttratamiento.setText(tratamiento);
+
+
     }
 
     public void mEditarMascota(View view){
@@ -137,8 +141,8 @@ public class DescripcionMascota extends AppCompatActivity {
                                         parametros.putString("ESTERILIZADO", esterilizado);
                                         parametros.putBoolean("ENCONTRADO", true);
 
-                                        Intent intent = new Intent(this,RegistroMascota.class);
-                intent.putExtras(parametros);
+                                        Intent intent = new Intent(this,Main_Fragment_Mascota.class);
+                                        intent.putExtras(parametros);
 
                                         //Inicia la actividad
                                         startActivityForResult(intent,1234);
