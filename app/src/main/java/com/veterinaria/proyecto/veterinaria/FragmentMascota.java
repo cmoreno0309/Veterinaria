@@ -10,12 +10,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.veterinaria.proyecto.veterinaria.data.MascotaDAO;
+import com.veterinaria.proyecto.veterinaria.data.MascotaSQLite;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import domain.Mascota;
+
 /**
  * Created by Cmoreno on 25/03/2016.
  */
 public class FragmentMascota extends Fragment {
 
     RecyclerView recyclerView;
+    private MascotaDAO mascotaDAO;
 
     public FragmentMascota(){
 
@@ -23,6 +32,7 @@ public class FragmentMascota extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        mascotaDAO= new MascotaSQLite(getContext());
         super.onCreate(savedInstanceState);
 
     }
@@ -31,6 +41,8 @@ public class FragmentMascota extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        List<Mascota> mascotas = new ArrayList<>();
+
         View rootView = inflater.inflate(R.layout.content_mascotas, container, false);
 
         //Lista de Servicios
@@ -38,7 +50,14 @@ public class FragmentMascota extends Fragment {
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        RecyclerView.Adapter adapter= new AdapterRecyclerVeterinaria(getActivity(),DataSource.MASCOTAS,0);
+        if(mascotaDAO.obtenerMascotas() != null && !mascotaDAO.obtenerMascotas().isEmpty()){
+            mascotas = mascotaDAO.obtenerMascotas();
+        }else{
+            mascotas = null;
+        }
+
+
+        RecyclerView.Adapter adapter= new AdapterRecyclerVeterinaria(getActivity(),mascotaDAO.obtenerMascotas(),0);
         recyclerView.setAdapter(adapter);
 
         FloatingActionButton fab = (FloatingActionButton) rootView.findViewById(R.id.fab);

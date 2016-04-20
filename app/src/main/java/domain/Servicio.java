@@ -5,28 +5,19 @@ package domain;
  */
 public class Servicio {
 
-    private String codigoServicio;
+    private int    codigoServicio;
     private String nombreServicio;
     private String descripcionServicio;
+    private byte[] imagen;
 
-    public Servicio(String codigoServicio,String nombreServicio){
-        this.codigoServicio = codigoServicio;
-        this.nombreServicio = nombreServicio;
+    public  Servicio() {
+
     }
 
-    public Servicio(String codigoServicio,String nombreServicio,String descripcionServicio){
-        this.codigoServicio = codigoServicio;
+    public  Servicio(String nombreServicio,String descripcionServicio) {
         this.nombreServicio = nombreServicio;
         this.descripcionServicio = descripcionServicio;
 
-    }
-
-    public String getCodigoServicio() {
-        return codigoServicio;
-    }
-
-    public void setCodigoServicio(String codigoServicio) {
-        this.codigoServicio = codigoServicio;
     }
 
     public String getNombreServicio() {
@@ -43,5 +34,21 @@ public class Servicio {
 
     public void setDescripcionServicio(String descripcionServicio) {
         this.descripcionServicio = descripcionServicio;
+    }
+
+    public byte[] getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(byte[] imagen) {
+        this.imagen = imagen;
+    }
+
+    public int getCodigoServicio() {
+        return codigoServicio;
+    }
+
+    public void setCodigoServicio(int codigoServicio) {
+        this.codigoServicio = codigoServicio;
     }
 }
