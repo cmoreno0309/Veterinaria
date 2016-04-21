@@ -1,33 +1,22 @@
 package com.veterinaria.proyecto.veterinaria;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-<<<<<<< HEAD
-import android.view.LayoutInflater;
-=======
 import android.util.Log;
->>>>>>> origin/master
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 
-<<<<<<< HEAD
-public class RegistroMascota extends Fragment {
-=======
 import com.veterinaria.proyecto.veterinaria.data.MascotaDAO;
 import com.veterinaria.proyecto.veterinaria.data.MascotaSQLite;
+import com.veterinaria.proyecto.veterinaria.data.ServicioSQLite;
 
 import domain.Mascota;
 
-public class RegistroMascota extends AppCompatActivity {
->>>>>>> origin/master
+public class RegistroMascota extends Fragment {
 
     public static final String ID_MASCOTA = "ID_MASCOTA";
     public static final String NOMBRE = "NOMBRE";
@@ -47,18 +36,15 @@ public class RegistroMascota extends AppCompatActivity {
 
 
     @Override
-<<<<<<< HEAD
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        mascotaDAO= new MascotaSQLite(getContext());
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.content_registro_mascota, container, false);
-
-=======
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        mascotaDAO= new MascotaSQLite(this);
-        setContentView(R.layout.content_registro_mascota);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
->>>>>>> origin/master
 
         edtnombre = (EditText) rootView.findViewById(R.id.edtnombre);
         //edtanios = (EditText) findViewById(R.id.edtanios);
@@ -70,51 +56,11 @@ public class RegistroMascota extends AppCompatActivity {
         edtalimentacion = (EditText) rootView.findViewById(R.id.edtalimentacion);
         //edtesterilizado = (EditText) findViewById(R.id.edtesterilizado);
 
-        Bundle parametros = new Bundle();
-               parametros = getActivity().getIntent().getExtras();
-        Boolean encontrado = parametros.getBoolean(ENCONTRADO);
-
-        if(encontrado){
-
-
-            idmascota = parametros.getInt(ID_MASCOTA);
-            String nombre = parametros.getString(NOMBRE);
-            String edad = parametros.getString(EDAD);
-            String cumpleanos = parametros.getString(CUMPLEANOS);
-            String sexo = parametros.getString(SEXO);
-            String raza = parametros.getString(RAZA);
-            String peso = parametros.getString(PESO);
-            String alimentacion = parametros.getString(ALIMENTACION);
-            String tratamiento = parametros.getString(TRATAMIENTO);
-            String color = parametros.getString(COLOR);
-            String esterilizado = parametros.getString(ESTERILIZADO);
-
-
-            edtnombre.setText(nombre);
-            //edtanios.setText(edad);
-            edtcumpleanos.setText(cumpleanos);
-            edtcolor.setText(color);
-            //edtsexo.setText(raza);
-            edtraza.setText(raza);
-            edtpeso.setText(peso);
-            edtalimentacion.setText(alimentacion);
-            /*edtesterilizado.setText(esterilizado);*/
-        }
 
         return rootView;
     }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
 
-
-        //setContentView(R.layout.content_registro_mascota);
-        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-
-
-    }
 
     public void mGuardarMascota(View view){
         Mascota mascota = new Mascota();
@@ -135,16 +81,14 @@ public class RegistroMascota extends AppCompatActivity {
         intent.putExtra(ALIMENTACION,edtalimentacion.getText().toString());
         intent.putExtra(COLOR,edtcolor.getText().toString());
         //intent.putExtra(ESTERILIZADO,edtesterilizado.getText().toString());
-<<<<<<< HEAD
+
         //setResult(Activity.RESULT_OK,intent);
         //getActivity().startActivityForResult(RESULT_OK,intent);
         //finish();
-=======
         long resultado =  mascotaDAO.registrarMascota(mascota);
-        Log.d("Resultado registro ",String.valueOf(resultado));
-        setResult(RESULT_OK, intent);
-        finish();
->>>>>>> origin/master
+        Log.d("Resultado registro ", String.valueOf(resultado));
+        getActivity().setResult(getActivity().RESULT_OK, intent);
+        getActivity().finish();
     }
 
     public void mLimpiarRegistro(View view){

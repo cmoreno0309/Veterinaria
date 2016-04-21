@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -65,11 +67,17 @@ public class FragmentMascota extends Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Bundle parametros = new Bundle();
-                parametros.putBoolean("ENCONTRADO", false);
-                Intent intent = new Intent(getActivity(), RegistroMascota.class);
-                intent.putExtras(parametros);
-                startActivityForResult(intent, 1234);
+               // Bundle parametros = new Bundle();
+               // parametros.putBoolean("ENCONTRADO", false);
+                //Intent intent = new Intent(getActivity(), RegistroMascota.class);
+                //intent.putExtras(parametros);
+
+                RegistroMascota registroMascota = new RegistroMascota();
+                //registroMascota.startActivityForResult(intent,1234);
+                FragmentManager fragmentManager = getFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction().setBreadCrumbTitle(getResources().getString(R.string.btn_dueno));
+                fragmentTransaction.replace(R.id.content_frame, registroMascota);
+                fragmentTransaction.commit();
             }
         });
 
