@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 
 import com.veterinaria.proyecto.veterinaria.data.MascotaDAO;
@@ -31,6 +32,7 @@ public class RegistroMascota extends Fragment {
     public static final String ESTERILIZADO = "ESTERILIZADO";
     public static final String ENCONTRADO = "ENCONTRADO";
     private EditText edtnombre,edtcumpleanos,edtcolor,edtraza,edtpeso,edtalimentacion,edtesterilizado;
+    Button btn_Registrar;
     int idmascota;
     MascotaDAO mascotaDAO;
 
@@ -55,12 +57,18 @@ public class RegistroMascota extends Fragment {
         edtpeso = (EditText) rootView.findViewById(R.id.edtpeso);
         edtalimentacion = (EditText) rootView.findViewById(R.id.edtalimentacion);
         //edtesterilizado = (EditText) findViewById(R.id.edtesterilizado);
+        btn_Registrar = (Button) rootView.findViewById(R.id.btnGuardarMascota);
+
+        btn_Registrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mGuardarMascota(v);
+            }
+        });
 
 
         return rootView;
     }
-
-
 
     public void mGuardarMascota(View view){
         Mascota mascota = new Mascota();
