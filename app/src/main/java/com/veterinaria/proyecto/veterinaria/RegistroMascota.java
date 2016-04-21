@@ -96,7 +96,7 @@ public class RegistroMascota extends Fragment {
         long resultado =  mascotaDAO.registrarMascota(mascota);
         Log.d("Resultado registro ", String.valueOf(resultado));
         getActivity().setResult(getActivity().RESULT_OK, intent);
-        getActivity().finish();
+       // getActivity().finish();
     }
 
     public void mLimpiarRegistro(View view){
