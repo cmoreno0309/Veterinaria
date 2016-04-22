@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -100,6 +101,10 @@ public class NavegacionRecordatorioActivity extends AppCompatActivity
             fragmentTransaction = true;
         }else if (id == R.id.nav_cita) {
             fragment = new FragmentCita();
+            fragmentTransaction = true;
+        }else if (id == R.id.nav_sesion) {
+            Log.d("nav_sesion","nav_sesion");
+            fragment = new FragmentSalir();
             fragmentTransaction = true;
         }
 
