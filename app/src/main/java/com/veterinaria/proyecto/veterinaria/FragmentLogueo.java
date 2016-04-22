@@ -51,7 +51,7 @@ public class FragmentLogueo extends Fragment {
                 if (txtUsuario.getText().toString().equals("Maria") && txtClave.getText().toString().equals("123")) {
                     Log.d("Entro", "yee");
 
-                    FragmentMascota fragment2 = new FragmentMascota();
+                    FragmentPerfil fragment2 = new FragmentPerfil();
                     FragmentManager fragmentManager = getFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction().setBreadCrumbTitle(getResources().getString(R.string.btn_dueno));
                     fragmentTransaction.replace(R.id.content_frame, fragment2);
