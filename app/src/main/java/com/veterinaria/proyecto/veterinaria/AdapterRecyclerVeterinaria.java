@@ -123,14 +123,14 @@ public class AdapterRecyclerVeterinaria extends RecyclerView.Adapter<AdapterRecy
 
             case 4:
                 Cita cita = lista_cita.get(position);
-                viewHolder.txt_principal.setText(cita.getEmpleado().getNombreEmpleado());
-                viewHolder.txt_secundario.setText(cita.getServicio().getNombreServicio());
+                viewHolder.txt_principal.setText(cita.getNombreEmpleado());
+                viewHolder.txt_secundario.setText(cita.getNombreServicio()+" "+cita.getFechaCita()+" "+cita.getHora());
                 break;
 
             case 5:
-                HorarioAtencion horario = lista_horario.get(position);
-                viewHolder.txt_principal.setText(horario.getEmpleado().getNombreEmpleado());
-                viewHolder.txt_secundario.setText(horario.getFechaDisponible().toString() + " " + horario.getEmpleado().getServicio().getNombreServicio());
+                Cita cita1 = lista_cita.get(position);
+                viewHolder.txt_principal.setText(cita1.getNombreEmpleado()+" "+cita1.getEstado());
+                viewHolder.txt_secundario.setText(cita1.getNombreServicio()+" "+cita1.getFechaCita()+" "+cita1.getHora());
                 break;
         }
 

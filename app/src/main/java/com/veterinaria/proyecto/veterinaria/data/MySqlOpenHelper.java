@@ -5,6 +5,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import java.util.Date;
+
 /**
  * Created by ANDROID on 16/04/2016.
  */
@@ -13,7 +15,7 @@ public class MySqlOpenHelper extends SQLiteOpenHelper {
 
     private static final String name = "veterinaria.db";
     Context context;
-    private static int versionDB = 1;
+    private static int versionDB = 3;
 
     public MySqlOpenHelper(Context context) {
 
@@ -43,6 +45,18 @@ public class MySqlOpenHelper extends SQLiteOpenHelper {
                 TablaDBContract.ServicioEntry.COLUMN_DESCRIPCION + " TEXT ," +
                 TablaDBContract.ServicioEntry.COLUMN_IMAGEN      + " BLOB)";
         db.execSQL(sql_servicio);
+
+        String sql_empleado = "CREATE TABLE " + TablaDBContract.CitaEntry.TABLE_NAME + " (" +
+                TablaDBContract.CitaEntry._ID + " INTEGER PRIMARY KEY," +
+                TablaDBContract.CitaEntry.COLUMN_FECHACITA      + " TEXT ," +
+                TablaDBContract.CitaEntry.COLUMN_HORA           + " TEXT ," +
+                TablaDBContract.CitaEntry.COLUMN_CODIGOEMPLEADO           + " TEXT ," +
+                TablaDBContract.CitaEntry.COLUMN_NOMBREEMPLEADO           + " TEXT ," +
+                TablaDBContract.CitaEntry.COLUMN_IMAGENEMPLEADO           + " BLOB ," +
+                TablaDBContract.CitaEntry.COLUMN_CODIGOSERVICIO           + " TEXT ," +
+                TablaDBContract.CitaEntry.COLUMN_NOMBRESERVICIO           + " TEXT ," +
+                TablaDBContract.CitaEntry.COLUMN_ESTADO      + " TEXT)";
+        db.execSQL(sql_empleado);
     }
 
     @Override
@@ -51,6 +65,7 @@ public class MySqlOpenHelper extends SQLiteOpenHelper {
 
         db.execSQL("DROP TABLE IF EXISTS " + TablaDBContract.MascotaEntry.TABLE_NAME);
         db.execSQL("DROP TABLE IF EXISTS " + TablaDBContract.ServicioEntry.TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS " + TablaDBContract.CitaEntry.TABLE_NAME);
         onCreate(db);
 
     }
