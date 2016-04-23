@@ -15,5 +15,7 @@ public interface CitaDAO {
 
     public long actualizarCita(Cita cita);
 
+    public long registrarCita(Cita cita);
+
 }
 

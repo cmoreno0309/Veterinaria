@@ -73,8 +73,28 @@ public class CitaSQLite implements CitaDAO {
     public long actualizarCita(Cita cita) {
         SQLiteDatabase sqLiteDatabase = mySqlOpenHelper.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(TablaDBContract.CitaEntry.COLUMN_ESTADO, cita.getEstado());
+        contentValues.put(TablaDBContract.CitaEntry.COLUMN_ESTADO, "Reservado");
         long row = sqLiteDatabase.update(TablaDBContract.CitaEntry.TABLE_NAME,contentValues,TablaDBContract.CitaEntry._ID + " ="+cita.getCodigoCita(),null);
         return row;
     }
+
+    @Override
+    public long registrarCita(Cita cita){
+        SQLiteDatabase sqLiteDatabase = mySqlOpenHelper.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(TablaDBContract.CitaEntry._ID, cita.getCodigoCita());
+        contentValues.put(TablaDBContract.CitaEntry.COLUMN_FECHACITA, cita.getFechaCita());
+        contentValues.put(TablaDBContract.CitaEntry.COLUMN_HORA, cita.getHora());
+        contentValues.put(TablaDBContract.CitaEntry.COLUMN_NOMBREEMPLEADO, cita.getNombreEmpleado());
+        contentValues.put(TablaDBContract.CitaEntry.COLUMN_IMAGENEMPLEADO, cita.getImagen());
+        contentValues.put(TablaDBContract.CitaEntry.COLUMN_NOMBRESERVICIO, cita.getNombreServicio());
+        contentValues.put(TablaDBContract.CitaEntry.COLUMN_ESTADO, cita.getEstado());
+
+        long row = sqLiteDatabase.
+                insert(TablaDBContract.CitaEntry.TABLE_NAME, null, contentValues);
+
+
+        return row;
+    }
+
 }

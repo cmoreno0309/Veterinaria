@@ -15,7 +15,7 @@ public class MySqlOpenHelper extends SQLiteOpenHelper {
 
     private static final String name = "veterinaria.db";
     Context context;
-    private static int versionDB = 3;
+    private static int versionDB = 7;
 
     public MySqlOpenHelper(Context context) {
 

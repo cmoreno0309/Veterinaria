@@ -17,6 +17,7 @@
         android:layout_height="wrap_content"
         calendarNS:dateFormat="MMMM yyyy"/>
 
+        <!--
         <Spinner android:id="@+id/sede"
             android:paddingTop="@dimen/activity_vertical_margin"
             android:layout_width="wrap_content"
@@ -24,12 +25,12 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:entries="@array/Sede"></Spinner>
-
+-->
     <android.support.v7.widget.RecyclerView
         android:id="@+id/lst_objetos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/sede">
+        android:layout_below="@id/calendar_view">
     </android.support.v7.widget.RecyclerView>
 
 

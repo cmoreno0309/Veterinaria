@@ -17,6 +17,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.veterinaria.proyecto.veterinaria.data.CitaDAO;
+import com.veterinaria.proyecto.veterinaria.data.CitaSQLite;
+
 import java.util.List;
 
 import domain.Cita;
@@ -41,6 +44,9 @@ public class AdapterRecyclerVeterinaria extends RecyclerView.Adapter<AdapterRecy
     List<Servicio> lista_servicio;
     List<Cita> lista_cita;
     List<HorarioAtencion> lista_horario;
+    private CitaDAO citaDAO;
+    int posicionCita = 0;
+
     public static final String VETERINARIO = "VETERINARIO";
     public static final String FECHA_CITA = "FECHA_CITA";
 
@@ -48,6 +54,7 @@ public class AdapterRecyclerVeterinaria extends RecyclerView.Adapter<AdapterRecy
         this.context = context;
         this.lst_Objetos = lst_Objetos;
         this.tipoObjeto = tipoObjeto;
+        citaDAO= new CitaSQLite(context);
         switch (tipoObjeto) {
             case 0:
                 this.lista_mascotas = (List<Mascota>) lst_Objetos;
@@ -65,7 +72,7 @@ public class AdapterRecyclerVeterinaria extends RecyclerView.Adapter<AdapterRecy
                 this.lista_cita = (List<Cita>) lst_Objetos;
                 break;
             case 5:
-                this.lista_horario = (List<HorarioAtencion>) lst_Objetos;
+                this.lista_cita = (List<Cita>) lst_Objetos;
                 break;
 
         }
@@ -169,7 +176,16 @@ public class AdapterRecyclerVeterinaria extends RecyclerView.Adapter<AdapterRecy
                     this.btn_vermas.setVisibility(View.INVISIBLE);
                     break;
                 case 5:
+                    Cita cita1 = lista_cita.get(posicionCita);
+                    Log.d("piscion ",String.valueOf(posicionCita));
+                    Log.d("Reservado/sin ",cita1.getEstado());
+                    posicionCita++;
                     this.btn_vermas.setText("Reservar");
+                    if(cita1.getEstado().equals("Reservado")){
+                        Log.d("Reservado ","RESERVADO");
+                        this.btn_vermas.setVisibility(View.INVISIBLE);
+                    }
+
                     break;
 
             }
@@ -214,6 +230,11 @@ public class AdapterRecyclerVeterinaria extends RecyclerView.Adapter<AdapterRecy
                         context.startActivity(new Intent(context, NoticiaActivity.class));
                         break;
 
+                    case 5: int positionCita = getLayoutPosition();
+                            Cita cita = lista_cita.get(positionCita);
+                            long resultado = citaDAO.actualizarCita(cita);
+                            break;
+
 
                 }
 
@@ -245,7 +266,13 @@ public class AdapterRecyclerVeterinaria extends RecyclerView.Adapter<AdapterRecy
                         context.startActivity(intent);
                         break;
                     case 5:
-                        Toast.makeText(context,"Se registró la cita",Toast.LENGTH_SHORT).show();
+                        int positionCita = getLayoutPosition();
+                        Cita cita = lista_cita.get(positionCita);
+                        long resultado = citaDAO.actualizarCita(cita);
+                        Log.d("Resultado ", String.valueOf(resultado));
+                        if(resultado == 1){
+                            Toast.makeText(context,"Se registró la cita",Toast.LENGTH_SHORT).show();
+                        }
                         break;
 
                 }
@@ -278,7 +305,7 @@ public class AdapterRecyclerVeterinaria extends RecyclerView.Adapter<AdapterRecy
                 return null == lista_cita ? 0 : lista_cita.size();
 
             case 5:
-                return null == lista_horario ? 0 : lista_horario.size();
+                return null == lista_cita ? 0 : lista_cita.size();
 
             default:
                 return 0;
